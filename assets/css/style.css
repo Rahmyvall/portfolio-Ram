@@ -298,7 +298,7 @@ h1, h2, h3, h4, h5, h6 {
 --------------------------------------------------------------*/
 #hero {
   height: 30vh;
-  width: 110%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -354,7 +354,7 @@ h1, h2, h3, h4, h5, h6 {
 /* typing text */
 .hero-container p {
   font-size: 20px;
-  color: #475569;
+  color: #5b8ccf;
 }
 
 .hero-container p span {
@@ -382,11 +382,6 @@ section {
   padding: 60px 0;
   overflow: hidden;
 }
-
-.section-bg {
-  background: #f5f8fd;
-}
-
 .section-title {
   padding-bottom: 30px;
 }
@@ -397,7 +392,6 @@ section {
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
-  color: #173b6c;
 }
 
 .section-title h2::after {
@@ -406,7 +400,6 @@ section {
   display: block;
   width: 50px;
   height: 3px;
-  background: #0073aa;
   bottom: 0;
   left: 0;
 }
@@ -425,7 +418,6 @@ section {
 .about .content h3 {
   font-weight: 700;
   font-size: 26px;
-  color: #173b6c;
 }
 
 .about .content ul {
@@ -494,7 +486,7 @@ section {
 }
 
 .facts .count-box a:hover {
-  color: #1f5297;
+  color: #4e82ca;
 }
 
 /*--------------------------------------------------------------
@@ -1248,7 +1240,7 @@ Testimonials Section
 .testimonials .section-title .lead {
   max-width: 850px;
   margin: 0 auto;
-  color: #64748b;
+  color: #080808;
   font-size: 1.05rem;
   line-height: 1.8;
 }
@@ -1259,7 +1251,7 @@ Testimonials Section
 }
 
 .testimonial-content {
-  background: #fff;
+
   border-radius: 20px;
   padding: 35px;
   height: 100%;
@@ -1278,12 +1270,11 @@ Testimonials Section
 .quote-icon {
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  background: rgba(37, 99, 235, 0.1)  ;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
   font-size: 24px;
   margin-bottom: 20px;
 }
@@ -1301,7 +1292,6 @@ Testimonials Section
 .testimonial-author {
   display: flex;
   align-items: center;
-  border-top: 1px solid #e2e8f0;
   padding-top: 20px;
 }
 
@@ -1387,7 +1377,6 @@ Testimonials Section
 
 .contact-card,
 .contact-form {
-  background: #fff;
   border-radius: 20px;
   padding: 35px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, .08);
@@ -2016,7 +2005,7 @@ Testimonials Section
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 8px;
-  background: linear-gradient(90deg, #fff, #1cc88a);
+  background: linear-gradient(90deg, #7bd0e6, #1cc88a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -2043,7 +2032,7 @@ Testimonials Section
 
 .footer-social a {
   font-size: 2.1rem;
-  color: #cbd5e1;
+  color: #5677a0;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   padding: 8px;
   border-radius: 12px;
