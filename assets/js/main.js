@@ -1,230 +1,280 @@
-!(function($) {
+!(function ($) {
   "use strict";
 
-  // Hero typed
-  if ($('.typed').length) {
-    var typed_strings = $(".typed").data('typed-items');
-    typed_strings = typed_strings.split(',')
-    new Typed('.typed', {
-      strings: typed_strings,
-      loop: true,
-      typeSpeed: 100,
-      backSpeed: 50,
-      backDelay: 2000
-    });
+  const body = $("body");
+  const navMenu = $(".nav-menu, .mobile-nav");
+  const navSections = $("section");
+  const mobileNavToggle = $(".mobile-nav-toggle");
+  const backToTop = $(".back-to-top");
+
+  const easing = $.easing && $.easing.easeInOutExpo ? "easeInOutExpo" : "swing";
+
+  function closeMobileNav() {
+    if (body.hasClass("mobile-nav-active")) {
+      body.removeClass("mobile-nav-active");
+
+      const icon = $(".mobile-nav-toggle i");
+      if (icon.length) {
+        icon.removeClass("icofont-close").addClass("icofont-navigation-menu");
+      }
+    }
   }
 
-  // Smooth scroll for the navigation menu and links with .scrollto classes
-  $(document).on('click', '.nav-menu a, .scrollto', function(e) {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+  function toggleMobileNav() {
+    body.toggleClass("mobile-nav-active");
+
+    const icon = $(".mobile-nav-toggle i");
+    if (icon.length) {
+      icon.toggleClass("icofont-navigation-menu icofont-close");
+    }
+  }
+
+  function scrollToTarget(target) {
+    if (!target.length) return;
+
+    $("html, body").animate(
+      {
+        scrollTop: target.offset().top
+      },
+      1500,
+      easing
+    );
+  }
+
+  function setActiveNav(link) {
+    if (!link || !link.length) return;
+
+    $(".nav-menu .active, .mobile-nav .active").removeClass("active");
+    link.closest("li").addClass("active");
+  }
+
+  function aosInit() {
+    if (typeof AOS !== "undefined") {
+      AOS.init({
+        duration: 1000,
+        easing: "ease-in-out-back",
+        once: true
+      });
+    }
+  }
+
+  // Hero typed
+  if ($(".typed").length && typeof Typed !== "undefined") {
+    let typedStrings = $(".typed").data("typed-items");
+
+    if (typedStrings) {
+      typedStrings = typedStrings.split(",");
+
+      new Typed(".typed", {
+        strings: typedStrings,
+        loop: true,
+        typeSpeed: 100,
+        backSpeed: 50,
+        backDelay: 2000
+      });
+    }
+  }
+
+  // Smooth scroll untuk menu dan link .scrollto
+  $(document).on("click", ".nav-menu a, .mobile-nav a, .scrollto", function (e) {
+    const pathnameMatch =
+      location.pathname.replace(/^\//, "") === this.pathname.replace(/^\//, "");
+
+    const hostnameMatch = location.hostname === this.hostname;
+
+    if (!pathnameMatch || !hostnameMatch) return;
+
+    const hash = this.hash;
+
+    if (!hash) return;
+
+    const target = $(hash);
+
+    if (target.length) {
       e.preventDefault();
-      var target = $(this.hash);
-      if (target.length) {
 
-        var scrollto = target.offset().top;
+      scrollToTarget(target);
+      setActiveNav($(this));
+      closeMobileNav();
 
-        $('html, body').animate({
-          scrollTop: scrollto
-        }, 1500, 'easeInOutExpo');
-
-        if ($(this).parents('.nav-menu, .mobile-nav').length) {
-          $('.nav-menu .active, .mobile-nav .active').removeClass('active');
-          $(this).closest('li').addClass('active');
-        }
-
-        if ($('body').hasClass('mobile-nav-active')) {
-          $('body').removeClass('mobile-nav-active');
-          $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
-        }
-        return false;
-      }
+      return false;
     }
   });
 
-  // Activate smooth scroll on page load with hash links in the url
-  $(document).ready(function() {
+  // Smooth scroll saat halaman dibuka dengan hash
+  $(document).ready(function () {
     if (window.location.hash) {
-      var initial_nav = window.location.hash;
-      if ($(initial_nav).length) {
-        var scrollto = $(initial_nav).offset().top;
-        $('html, body').animate({
-          scrollTop: scrollto
-        }, 1500, 'easeInOutExpo');
+      const target = $(window.location.hash);
+
+      if (target.length) {
+        scrollToTarget(target);
       }
     }
   });
 
-  $(document).on('click', '.mobile-nav-toggle', function(e) {
-    $('body').toggleClass('mobile-nav-active');
-    $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
+  // Toggle mobile navigation
+  $(document).on("click", ".mobile-nav-toggle", function (e) {
+    e.preventDefault();
+    toggleMobileNav();
   });
 
-  $(document).click(function(e) {
-    var container = $(".mobile-nav-toggle");
-    if (!container.is(e.target) && container.has(e.target).length === 0) {
-      if ($('body').hasClass('mobile-nav-active')) {
-        $('body').removeClass('mobile-nav-active');
-        $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
-      }
+  // Tutup mobile navigation saat klik di luar menu
+  $(document).on("click", function (e) {
+    const clickInsideToggle = mobileNavToggle.is(e.target) || mobileNavToggle.has(e.target).length > 0;
+    const clickInsideNav = $(".mobile-nav").is(e.target) || $(".mobile-nav").has(e.target).length > 0;
+
+    if (!clickInsideToggle && !clickInsideNav) {
+      closeMobileNav();
     }
   });
 
-  // Navigation active state on scroll
-  var nav_sections = $('section');
-  var main_nav = $('.nav-menu, .mobile-nav');
+  // Active menu saat scroll
+  $(window).on("scroll", function () {
+    const curPos = $(this).scrollTop() + 200;
 
-  $(window).on('scroll', function() {
-    var cur_pos = $(this).scrollTop() + 200;
+    navSections.each(function () {
+      const section = $(this);
+      const top = section.offset().top;
+      const bottom = top + section.outerHeight();
+      const id = section.attr("id");
 
-    nav_sections.each(function() {
-      var top = $(this).offset().top,
-        bottom = top + $(this).outerHeight();
+      if (!id) return;
 
-      if (cur_pos >= top && cur_pos <= bottom) {
-        if (cur_pos <= bottom) {
-          main_nav.find('li').removeClass('active');
-        }
-        main_nav.find('a[href="#' + $(this).attr('id') + '"]').parent('li').addClass('active');
-      }
-      if (cur_pos < 300) {
-        $(".nav-menu ul:first li:first").addClass('active');
+      if (curPos >= top && curPos <= bottom) {
+        navMenu.find("li").removeClass("active");
+        navMenu.find('a[href="#' + id + '"]').parent("li").addClass("active");
       }
     });
+
+    if (curPos < 300) {
+      $(".nav-menu ul:first li:first").addClass("active");
+    }
   });
 
   // Back to top button
-  $(window).scroll(function() {
+  $(window).on("scroll", function () {
     if ($(this).scrollTop() > 100) {
-      $('.back-to-top').fadeIn('slow');
+      backToTop.fadeIn("slow");
     } else {
-      $('.back-to-top').fadeOut('slow');
+      backToTop.fadeOut("slow");
     }
   });
 
-  $('.back-to-top').click(function() {
-    $('html, body').animate({
-      scrollTop: 0
-    }, 1500, 'easeInOutExpo');
+  backToTop.on("click", function (e) {
+    e.preventDefault();
+
+    $("html, body").animate(
+      {
+        scrollTop: 0
+      },
+      1500,
+      easing
+    );
+
     return false;
   });
 
-  // jQuery counterUp
-  $('[data-toggle="counter-up"]').counterUp({
-    delay: 10,
-    time: 1000
-  });
-
-  // Skills section
-  $('.skills-content').waypoint(function() {
-    $('.progress .progress-bar').each(function() {
-      $(this).css("width", $(this).attr("aria-valuenow") + '%');
-    });
-  }, {
-    offset: '80%'
-  });
-
-  // Porfolio isotope and filter
-  $(window).on('load', function() {
-    var portfolioIsotope = $('.portfolio-container').isotope({
-      itemSelector: '.portfolio-item',
-      layoutMode: 'fitRows'
-    });
-
-    $('#portfolio-flters li').on('click', function() {
-      $("#portfolio-flters li").removeClass('filter-active');
-      $(this).addClass('filter-active');
-
-      portfolioIsotope.isotope({
-        filter: $(this).data('filter')
-      });
-      aos_init();
-    });
-
-    // Initiate venobox (lightbox feature used in portofilo)
-    $(document).ready(function() {
-      $('.venobox').venobox();
-    });
-  });
-
-  // Testimonials carousel (uses the Owl Carousel library)
-  $(".testimonials-carousel").owlCarousel({
-    autoplay: true,
-    dots: true,
-    loop: true,
-    responsive: {
-      0: {
-        items: 1
-      },
-      768: {
-        items: 2
-      },
-      900: {
-        items: 2
-      }
-    }
-  });
-
-  // Portfolio details carousel
-  $(".portfolio-details-carousel").owlCarousel({
-    autoplay: true,
-    dots: true,
-    loop: true,
-    items: 1
-  });
-
-  // Init AOS
-  function aos_init() {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out-back",
-      once: true
+  // Counter up
+  if ($.fn.counterUp) {
+    $('[data-toggle="counter-up"]').counterUp({
+      delay: 10,
+      time: 1000
     });
   }
-  $(window).on('load', function() {
-    aos_init();
+
+  // Skills progress bar
+  if ($.fn.waypoint) {
+    $(".skills-content").waypoint(
+      function () {
+        $(".progress .progress-bar").each(function () {
+          const value = $(this).attr("aria-valuenow");
+
+          if (value) {
+            $(this).css("width", value + "%");
+          }
+        });
+      },
+      {
+        offset: "80%"
+      }
+    );
+  }
+
+  // Portfolio isotope dan filter
+  $(window).on("load", function () {
+    if ($.fn.isotope && $(".portfolio-container").length) {
+      const portfolioIsotope = $(".portfolio-container").isotope({
+        itemSelector: ".portfolio-item",
+        layoutMode: "fitRows"
+      });
+
+      $("#portfolio-flters li").on("click", function () {
+        $("#portfolio-flters li").removeClass("filter-active");
+        $(this).addClass("filter-active");
+
+        portfolioIsotope.isotope({
+          filter: $(this).data("filter")
+        });
+
+        aosInit();
+      });
+    }
+
+    // Venobox lightbox
+    if ($.fn.venobox) {
+      $(".venobox").venobox();
+    }
+
+    aosInit();
   });
 
+  // Testimonials carousel
+  if ($.fn.owlCarousel && $(".testimonials-carousel").length) {
+    $(".testimonials-carousel").owlCarousel({
+      autoplay: true,
+      dots: true,
+      loop: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        768: {
+          items: 2
+        },
+        900: {
+          items: 2
+        }
+      }
+    });
+  }
+
+  // Portfolio details carousel
+  if ($.fn.owlCarousel && $(".portfolio-details-carousel").length) {
+    $(".portfolio-details-carousel").owlCarousel({
+      autoplay: true,
+      dots: true,
+      loop: true,
+      items: 1
+    });
+  }
 })(jQuery);
 
 
-/*console print*/
+/* Console print */
 console.log(
-  `%c                       
-                                ___________________________________________
-                                ___________________________________________
-                                < That's it You can Check my Code Here 😀>
-                                -------------------------------------------
-                                -------------------------------------------
-
- ______             __  __                    __            _______                                                       
- /      \           /  |/  |                  /  |          /       \                                                      
-/$$$$$$  |  ______  $$/ $$ |   __   ______   _$$ |_         $$$$$$$  |  ______   __    __                                  
-$$ \__$$/  /      \ /  |$$ |  /  | /      \ / $$   |        $$ |__$$ | /      \ /  |  /  |                                 
-$$      \  $$$$$$  |$$ |$$ |_/$$/  $$$$$$  |$$$$$$/         $$    $$< /$$$$$$  |$$ |  $$ |                                 
- $$$$$$  | /    $$ |$$ |$$   $$<   /    $$ |  $$ | __       $$$$$$$  |$$ |  $$ |$$ |  $$ |                                 
-/  \__$$ |/$$$$$$$ |$$ |$$$$$$  \ /$$$$$$$ |  $$ |/  |      $$ |  $$ |$$ \__$$ |$$ \__$$ |                                 
-$$    $$/ $$    $$ |$$ |$$ | $$  |$$    $$ |  $$  $$/       $$ |  $$ |$$    $$/ $$    $$ |                                 
- $$$$$$/   $$$$$$$/ $$/ $$/   $$/  $$$$$$$/    $$$$/        $$/   $$/  $$$$$$/   $$$$$$$ |                                 
-                                                                                /  \__$$ |                                 
-                                                                                $$    $$/                                  
-                                                                                 $$$$$$/                                                                                                                                             
-                                                                                                                           
- __       __            __              _______                                 __                                         
-/  |  _  /  |          /  |            /       \                               /  |                                        
-$$ | / \ $$ |  ______  $$ |____        $$$$$$$  |  ______   __     __  ______  $$ |  ______    ______    ______    ______  
-$$ |/$  \$$ | /      \ $$      \       $$ |  $$ | /      \ /  \   /  |/      \ $$ | /      \  /      \  /      \  /      \ 
-$$ /$$$  $$ |/$$$$$$  |$$$$$$$  |      $$ |  $$ |/$$$$$$  |$$  \ /$$//$$$$$$  |$$ |/$$$$$$  |/$$$$$$  |/$$$$$$  |/$$$$$$  |
-$$ $$/$$ $$ |$$    $$ |$$ |  $$ |      $$ |  $$ |$$    $$ | $$  /$$/ $$    $$ |$$ |$$ |  $$ |$$ |  $$ |$$    $$ |$$ |  $$/ 
-$$$$/  $$$$ |$$$$$$$$/ $$ |__$$ |      $$ |__$$ |$$$$$$$$/   $$ $$/  $$$$$$$$/ $$ |$$ \__$$ |$$ |__$$ |$$$$$$$$/ $$ |      
-$$$/    $$$ |$$       |$$    $$/       $$    $$/ $$       |   $$$/   $$       |$$ |$$    $$/ $$    $$/ $$       |$$ |      
-$$/      $$/  $$$$$$$/ $$$$$$$/        $$$$$$$/   $$$$$$$/     $/     $$$$$$$/ $$/  $$$$$$/  $$$$$$$/   $$$$$$$/ $$/       
-                                                                                             $$ |                          
-                                                                                             $$ |                          
-                                                                                             $$/                           
-           
-                                                                                        
-                                                                                        
-                                                                                        
-                                                                               `,
-  "font-family:monospace"
+  `%c
+ __       __            __              _______                                 __
+/  |  _  /  |          /  |            /       \\                               /  |
+$$ | / \\ $$ |  ______  $$ |____        $$$$$$$  |  ______   __     __  ______  $$ |  ______    ______    ______    ______
+$$ |/$  \\$$ | /      \\ $$      \\       $$ |  $$ | /      \\ /  \\   /  |/      \\ $$ | /      \\  /      \\  /      \\  /      \\
+$$ /$$$  $$ |/$$$$$$  |$$$$$$$  |      $$ |  $$ |/$$$$$$  |$$  \\ /$$//$$$$$$  |$$ |/$$$$$$  |/$$$$$$  |/$$$$$$  |/$$$$$$  |
+$$ $$/$$ $$ |$$    $$ |$$ |  $$ |      $$ |  $$ |$$    $$ | $$  /$$/ $$    $$ |$$ |$$ |  $$ |$$ |  $$ |$$    $$ |$$ |  $$/
+$$$$/  $$$$ |$$$$$$$$/ $$ |__$$ |      $$ |__$$ |$$$$$$$$/   $$ $$/  $$$$$$$$/ $$ |$$ \\__$$ |$$ |__$$ |$$$$$$$$/ $$ |
+$$$/    $$$ |$$       |$$    $$/       $$    $$/ $$       |   $$$/   $$       |$$ |$$    $$/ $$    $$/ $$       |$$ |
+$$/      $$/  $$$$$$$/ $$$$$$$/        $$$$$$$/   $$$$$$$/     $/     $$$$$$$/ $$/  $$$$$$/  $$$$$$$/   $$$$$$$/ $$/
+                                                                                             $$ |
+                                                                                             $$ |
+                                                                                             $$/
+`,
+  "font-family: monospace"
 );
