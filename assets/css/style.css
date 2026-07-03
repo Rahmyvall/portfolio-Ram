@@ -1141,21 +1141,104 @@ RESPONSIVE
    PORTFOLIO CARD MODERN
 ========================= */
 
-.portfolio-wrap {
-  border-radius: 18px;
-  overflow: hidden;
-  position: relative;
+.portfolio {
+  padding: 90px 0;
+  background: #f9fafb;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+/* ================= TITLE ================= */
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title h2 {
+  font-size: 34px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.section-title p {
+  font-size: 14px;
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ================= FILTER ================= */
+.portfolio-flters-modern {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 0;
+  margin-bottom: 40px;
+  list-style: none;
+}
+
+.portfolio-flters-modern li {
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  color: #374151;
+}
+
+.portfolio-flters-modern li:hover {
+  transform: translateY(-2px);
+  border-color: #d1d5db;
+}
+
+.portfolio-flters-modern li.filter-active {
   background: #111827;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-  transition: all 0.35s ease;
+  color: #ffffff;
+  border-color: #111827;
+}
+
+/* link UIUX */
+.uiux-direct-link {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.uiux-direct-link:hover {
+  text-decoration: underline;
+}
+
+/* ================= GRID ================= */
+.portfolio-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* spacing fix bootstrap override */
+.portfolio-item {
+  margin-bottom: 24px;
+}
+
+/* ================= CARD ================= */
+.portfolio-wrap {
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 .portfolio-wrap:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
 }
 
-/* IMAGE */
+/* ================= IMAGE ================= */
 .portfolio-img-wrapper {
   position: relative;
   overflow: hidden;
@@ -1163,81 +1246,84 @@ RESPONSIVE
 
 .portfolio-img-wrapper img {
   width: 100%;
-  height: 240px;
+  height: 230px;
   object-fit: cover;
-  transition: transform 0.6s ease;
+  transition: transform 0.4s ease;
 }
 
 .portfolio-wrap:hover img {
   transform: scale(1.08);
 }
 
-/* OVERLAY */
+/* overlay */
 .portfolio-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(to top,
       rgba(0, 0, 0, 0.75),
-      rgba(0, 0, 0, 0.1));
-  opacity: 0;
-  transition: 0.4s ease;
+      rgba(0, 0, 0, 0.1),
+      transparent);
   display: flex;
   align-items: flex-end;
-  padding: 15px;
+  padding: 12px;
+  opacity: 0;
+  transition: 0.3s ease;
 }
 
 .portfolio-wrap:hover .portfolio-overlay {
   opacity: 1;
 }
 
-/* BADGES */
+/* badges */
 .tech-badges {
   display: flex;
-  flex-wrap: wrap;
   gap: 6px;
+  flex-wrap: wrap;
 }
 
 .tech-badges .badge {
   font-size: 11px;
-  padding: 6px 10px;
-  border-radius: 999px;
+  padding: 5px 8px;
+  border-radius: 6px;
+}
+
+/* ================= CONTENT ================= */
+.portfolio-info {
+  padding: 16px;
+}
+
+.portfolio-info h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+.tech-stack {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+/* ================= BUTTON ================= */
+.btn-modern {
+  background: #111827;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 10px;
+  text-decoration: none;
   font-weight: 500;
-  background: rgba(255, 255, 255, 0.1);
-  color: #cbd5e1;
-  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.25s;
 }
 
-/* custom badge colors */
-.bg-laravel {
-  background: #ef4444;
-  color: #fff;
+.btn-modern:hover {
+  background: #000000;
+  transform: translateY(-2px);
 }
-
-.bg-tailwind {
-  background: #06b6d4;
-  color: #fff;
-}
-
-.bg-mysql {
-  background: #f59e0b;
-  color: #111;
-}
-
-.bg-vue {
-  background: #22c55e;
-  color: #fff;
-}
-
-.bg-chart {
-  background: #8b5cf6;
-  color: #fff;
-}
-
-.bg-role {
-  background: #64748b;
-  color: #fff;
-}
-
 /* =========================
    INFO SECTION
 ========================= */
@@ -1262,50 +1348,7 @@ RESPONSIVE
    LINKS (ICONS)
 ========================= */
 
-.portfolio-links {
-  margin-top: 12px;
-  display: flex;
-  gap: 10px;
-}
 
-.portfolio-links a {
-  width: 38px;
-  height: 38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.06);
-  color: #e2e8f0;
-  transition: 0.3s ease;
-}
-
-.portfolio-links a:hover {
-  background: #3b82f6;
-  transform: translateY(-2px);
-}
-
-/* =========================
-   DETAIL BUTTON STYLE
-========================= */
-
-.btn-detail {
-  margin-left: auto;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 768px) {
-  .portfolio-img-wrapper img {
-    height: 200px;
-  }
-
-  .section-title h2 {
-    font-size: 26px;
-  }
-}
 /* =========================
    SECTION BASE
 ========================= */
