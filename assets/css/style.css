@@ -297,81 +297,188 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-#hero {
-  height: 30vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
+.hero {
+    min-height: 15vh;
+    padding: 10px 0;
+    background:
+    radial-gradient(circle at top left, #6366f1, transparent 35%),
+    linear-gradient(135deg, #020617, #111827);
 
-  /* background lebih modern */
-  background: linear-gradient(135deg, #f8fbff, #eef5ff);
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* soft glow kecil (tidak besar, sangat subtle) */
-#hero::before {
-  content: "";
-  position: absolute;
-  width: 140px;
-  height: 140px;
-  background: rgba(59, 130, 246, 0.15);
-  top: 25%;
-  left: 20%;
-  border-radius: 50%;
-  filter: blur(30px);
+
+/* semua isi hero rata tengah */
+.hero .container,
+.hero .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#hero::after {
-  content: "";
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  background: rgba(236, 72, 153, 0.12);
-  bottom: 25%;
-  right: 20%;
-  border-radius: 50%;
-  filter: blur(30px);
+
+.hero .text-center {
+    text-align: center;
 }
 
-/* container text */
-.hero-container {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 30px;
+
+/* Badge */
+.hero-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 50px;
+    background: rgba(255,255,255,.1);
+    backdrop-filter: blur(10px);
+    font-size: 13px;
+    margin-bottom: 15px;
 }
 
-/* nama */
-.hero-container h1 {
-  font-size: 48px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: #0f172a;
-  margin-bottom: 10px;
+
+/* Nama */
+.hero h1 {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    margin-bottom: 15px;
+    text-align: center;
 }
 
-/* typing text */
-.hero-container p {
-  font-size: 20px;
-  color: #5b8ccf;
+
+.hero h1 span {
+    background: linear-gradient(
+        90deg,
+        #38bdf8,
+        #818cf8
+    );
+
 }
 
-.hero-container p span {
-  color: #2563eb;
-  font-weight: 600;
+
+/* Role */
+.hero h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-align: center;
 }
 
-/* responsive */
-@media (max-width: 768px) {
-  .hero-container h1 {
-    font-size: 32px;
-  }
 
-  .hero-container p {
+/* Deskripsi */
+.hero p {
     font-size: 16px;
-  }
+    color: #cbd5e1;
+
+    max-width: 480px;
+    line-height: 1.6;
+
+    margin: 0 auto 25px;
+
+    text-align: center;
+}
+
+
+/* Button */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+
+.btn-primary,
+.btn-outline {
+    padding: 11px 25px;
+    font-size: 14px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: .3s;
+}
+
+
+.btn-primary {
+    background: #6366f1;
+    color: white;
+}
+
+
+.btn-outline {
+    border: 1px solid rgba(255,255,255,.3);
+    color: white;
+}
+
+
+/* Technology */
+.hero-tech {
+    margin-top: 25px;
+
+    display: flex;
+    justify-content: center;
+
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+
+.hero-tech span {
+    padding: 6px 14px;
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.15);
+}
+
+
+
+/* Responsive */
+@media(max-width:991px){
+
+    .hero {
+        min-height: auto;
+        padding: 60px 0;
+    }
+
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+
+    .hero h2 {
+        font-size: 20px;
+    }
+
+
+    .hero p {
+        font-size: 15px;
+    }
+
+}
+
+
+@media(max-width:480px){
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+
+    .hero h2 {
+        font-size: 18px;
+    }
+
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
 }
 /*--------------------------------------------------------------
 # Sections General
@@ -2464,7 +2571,6 @@ RESPONSIVE
   font-weight: 700;
   margin-bottom: 8px;
   background: linear-gradient(90deg, #7bd0e6, #1cc88a);
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 

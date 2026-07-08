@@ -9,7 +9,32 @@
         "link-name": "off"
       }
     ],
-    "disown-opener": "off"
+    "disown-opener": "off",
+    "no-inline-styles": "off",
+    "compat-api/html": [
+      "default",
+      {
+        "ignore": [
+          "iframe[referrerpolicy=no-referrer-when-downgrade]",
+          "meta[name=theme-color]"
+        ]
+      }
+    ],
+    "axe/text-alternatives": [
+      "default",
+      {
+        "frame-title": "off"
+      }
+    ],
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "min-height: auto",
+          "min-height: auto"
+        ]
+      }
+    ]
   },
   "browserslist": [
     "defaults",
