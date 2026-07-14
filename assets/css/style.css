@@ -1770,7 +1770,61 @@ RESPONSIVE
 
 }
 
+.resume-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 6px;
+}
 
+.resume-header h4 {
+  margin: 0;
+}
+
+.resume-period {
+  flex-shrink: 0;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  background: rgba(20, 157, 221, 0.1);
+  color: #149ddd;
+}
+
+.resume-description {
+  margin-top: 12px;
+  line-height: 1.7;
+}
+
+.project-highlight {
+  margin-top: 16px;
+  padding: 18px;
+  border-left: 3px solid #149ddd;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.project-highlight h6,
+.skill-category h6 {
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.skill-category {
+  margin-top: 18px;
+}
+
+@media (max-width: 576px) {
+  .resume-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
 
 /* =====================================
    CONTENT
@@ -1933,7 +1987,6 @@ RESPONSIVE
         padding:11px 18px;
 
     }
-
 
 
     .testimonial-card-modern {
