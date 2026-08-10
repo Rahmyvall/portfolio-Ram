@@ -1835,187 +1835,252 @@
             database, dan teknologi digital.
           </p>
         </div>
-        <!-- LIST SERTIFIKAT -->
-        <div class="row">
-          <div class="col-lg-6">
-          <a class="cert-card"
-            href="assets/Web%20Development/Implementasi%20Payment%20Gateway%20Indonesia%20Menggunakan%20Laravel.pdf"
-            rel="noopener noreferrer" target="_blank">
-          
-            <div class="cert-icon pdf">
-              <i class="bx bxs-file-pdf"></i>
-              </div>
-          
-            <div class="cert-content">
-              <span class="cert-category">
-                Bootcamp
-              </span>
-          
-              <h5>
-                Web Development
-              </h5>
-          
-              <p>
-                Full Stack Laravel Bootcamp
-              </p>
-              </div>
-          
-            <div class="cert-arrow">
-              <i class="bx bx-right-arrow-alt"></i>
-              </div>
-          
-          </a>
-            <a class="cert-card" href="assets/SQL%20for%20Data%20Analysis/" rel="noopener noreferrer" target="_blank">
-              <div class="cert-icon database">
-                <i class="bx bx-data">
-                </i>
-              </div>
-              <div class="cert-content">
-                <span class="cert-category">
-                  Database
-                </span>
-                <h5>
-                  Database Design
-                </h5>
-                <p>
-                  MySQL &amp; PostgreSQL Fundamental
-                </p>
-              </div>
-              <div class="cert-arrow">
-                <i class="bx bx-right-arrow-alt">
-                </i>
-              </div>
-            </a>
-            <a aria-disabled="true" class="cert-card" href="javascript:void(0)">
-              <div class="cert-icon code">
-                <i class="bx bx-code-alt">
-                </i>
-              </div>
-              <div class="cert-content">
-                <span class="cert-category">
-                  Programming
-                </span>
-                <h5>
-                  JavaScript Programming
-                </h5>
-                <p>
-                  Modern JavaScript ES6+
-                </p>
-              </div>
-              <div class="cert-arrow">
-                <i class="bx bx-right-arrow-alt">
-                </i>
-              </div>
-            </a>
-            <a class="cert-card" href="assets/Troubleshooting%20%26%20Debugging/" rel="noopener noreferrer" target="_blank">
-              <div class="cert-icon code">
-                <i class="bx bx-bug">
-                </i>
-              </div>
-              <div class="cert-content">
-                <span class="cert-category">
-                  IT Support
-                </span>
-                <h5>
-                  Troubleshooting &amp; Debugging
-                </h5>
-                <p>
-                  Problem Solving, Error Analysis &amp; System Debugging
-                </p>
-              </div>
-              <div class="cert-arrow">
-                <i class="bx bx-right-arrow-alt">
-                </i>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-6">
-            <a aria-disabled="true" class="cert-card" href="javascript:void(0)">
-              <div class="cert-icon design">
-                <i class="bx bx-palette">
-                </i>
-              </div>
-              <div class="cert-content">
-                <span class="cert-category">
-                  Design
-                </span>
-                <h5>
-                  UI/UX Design
-                </h5>
-                <p>
-                  Figma Basic to Advanced
-                </p>
-              </div>
-              <div class="cert-arrow">
-                <i class="bx bx-right-arrow-alt">
-                </i>
-              </div>
-            </a>
-            <a class="cert-card" href="assets/Git/" rel="noopener noreferrer" target="_blank">
-              <div class="cert-icon git">
-                <i class="bx bx-git-branch">
-                </i>
-              </div>
-              <div class="cert-content">
-                <span class="cert-category">
-                  Version Control
-                </span>
-                <h5>
-                  Git &amp; GitHub
-                </h5>
-                <p>
-                  Workflow, Branching, Commit, dan Repository
-                </p>
-              </div>
-              <div class="cert-arrow">
-                <i class="bx bx-right-arrow-alt">
-                </i>
-              </div>
-            </a>
-            <a aria-disabled="true" class="cert-card" href="javascript:void(0)">
-              <div class="cert-icon security">
-                <i class="bx bx-shield-quarter">
-                </i>
-              </div>
-              <div class="cert-content">
-                <span class="cert-category">
-                  Security
-                </span>
-                <h5>
-                  Web Security
-                </h5>
-                <p>
-                  Secure Web Application
-                </p>
-              </div>
-              <div class="cert-arrow">
-                <i class="bx bx-right-arrow-alt">
-                </i>
-              </div>
-            </a>
-            <a class="cert-card"
-              href="assets/Bisnis%2C%20Online%20Shop%20dan%20Freelance/Membangun%20Online%20Shop%20-%20MySkill%20X%20Tokopedia/"
-              rel="noopener noreferrer" target="_blank">
-              <div class="cert-icon business">
-                <i class="bx bx-briefcase">
-                </i>
-              </div>
-              <div class="cert-content">
-                <span class="cert-category">
-                  Business
-                </span>
-                <h5>
-                  Bisnis Digital
-                </h5>
-                <p>
-                  Manajemen usaha digital dan strategi pengembangan
-                  produk
-                </p>
-              </div>
-              <div class="cert-arrow">
-                <i class="bx bx-right-arrow-alt">
-                </i>
-              </div>
+        <!-- LIST SERTIFIKAT TABLE -->
+        <div class="table-responsive">
+          <table class="cert-table">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Kategori</th>
+                <th>Sertifikat</th>
+                <th>Deskripsi</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="cert-no">1</td>
+                <td><span class="cert-category-badge bootcamp">Bootcamp</span></td>
+                <td>
+                  <div class="cert-title-cell">
+                    <div class="cert-icon-sm pdf"><i class="bx bxs-file-pdf"></i></div>
+                    <span>Web Development</span>
+                  </div>
+                </td>
+                <td>Full Stack Laravel Bootcamp</td>
+                <td>
+                  <div class="cert-link-list">
+                    <a class="cert-action-btn mb-2"
+                      href="assets/sertifikat/Web/Implementasi%20Payment%20Gateway%20Indonesia%20Menggunakan%20Laravel.pdf"
+                      rel="noopener noreferrer" target="_blank">
+                      <i class="bx bx-file-pdf"></i> Implementasi Payment Gateway Indonesia Menggunakan Laravel
+                      </a>
+                      <a class="cert-action-btn mb-2" href="assets/sertifikat/Web/Membuat%20Backend%20Aplikasi%20Social.pdf"
+                        rel="noopener noreferrer" target="_blank">
+                        <i class="bx bx-file-pdf"></i> Membuat Backend Aplikasi Social
+                      </a>
+                      <a class="cert-action-btn mb-2"
+                        href="assets/sertifikat/Web/Mengembangkan%20Aplikasi%20Restoran%20berbasis%20QR%20dengan%20Laravel%2012.pdf"
+                        rel="noopener noreferrer" target="_blank">
+                        <i class="bx bx-file-pdf"></i> Aplikasi Restoran Berbasis QR - Laravel 12
+                      </a>
+                      <a class="cert-action-btn mb-2"
+                        href="assets/sertifikat/Web/Mengembangkan%20Sistem%20HRIS%20Seperti%20Talenta%20Menggunakan%20Laravel%2012.pdf"
+                        rel="noopener noreferrer" target="_blank">
+                        <i class="bx bx-file-pdf"></i> Sistem HRIS Seperti Talenta - Laravel 12
+                      </a>
+                      <a class="cert-action-btn mb-2"
+                        href="assets/sertifikat/Web/Mengembangkan%20Sistem%20Streaming%20Seperti%20Netflix%20Menggunakan%20Laravel%2011.pdf"
+                        rel="noopener noreferrer" target="_blank">
+                        <i class="bx bx-file-pdf"></i> Sistem Streaming Seperti Netflix - Laravel 11
+                      </a>
+                      <a class="cert-action-btn mb-2"
+                        href="assets/sertifikat/Web/MongoDB%2C%20Express%2C%20Vue%2C%20Node%20-%20Shopping%20Cart.pdf"
+                        rel="noopener noreferrer" target="_blank">
+                        <i class="bx bx-file-pdf"></i> MongoDB, Express, Vue, Node - Shopping Cart
+                      </a>
+                      <a class="cert-action-btn" href="assets/sertifikat/Web/Website%20Portofolio%20Menggunakan%20Tailwind%20CSS.pdf"
+                        rel="noopener noreferrer" target="_blank">
+                        <i class="bx bx-file-pdf"></i> Website Portofolio Menggunakan Tailwind CSS
+                      </a>
+                      </div>
+                </td>
+                </tr>
+                <tr>
+                  <td class="cert-no">2</td>
+                  <td><span class="cert-category-badge database">Database</span></td>
+                  <td>
+                    <div class="cert-title-cell">
+                      <div class="cert-icon-sm database"><i class="bx bx-data"></i></div>
+                      <span>Database Design</span>
+                    </div>
+                </td>
+                <td>MySQL &amp; PostgreSQL Fundamental</td>
+                <td>
+                  <div class="cert-link-list">
+                    <a class="cert-action-btn"
+                      href="assets/sertifikat/SQLforData%20Analysis/xqaHVl9f8WbGKuWjyPgtiTPnbDB3-eEsA2QTt0oFkAqEki6ps.pdf"
+                      rel="noopener noreferrer" target="_blank">
+                      <i class="bx bx-file-pdf"></i> SQL for Data Analysis Certificate
+                    </a>
+                  </div>
+                </td>
+                </tr>
+                <tr>
+                  <td class="cert-no">3</td>
+                  <td><span class="cert-category-badge programming">Programming</span></td>
+                  <td>
+                    <div class="cert-title-cell">
+                      <div class="cert-icon-sm code"><i class="bx bx-code-alt"></i></div>
+                      <span>JavaScript Programming</span>
+                    </div>
+                </td>
+                <td>Modern JavaScript ES6+</td>
+                <td><span class="cert-action-disabled"><i class="bx bx-time"></i> Segera</span></td>
+                </tr>
+                <tr>
+                  <td class="cert-no">4</td>
+                  <td><span class="cert-category-badge it-support">IT Support</span></td>
+                  <td>
+                    <div class="cert-title-cell">
+                      <div class="cert-icon-sm code"><i class="bx bx-bug"></i></div>
+                      <span>Troubleshooting &amp; Debugging</span>
+                    </div>
+                </td>
+                <td>Problem Solving, Error Analysis &amp; System Debugging</td>
+                <td>
+                  <div class="cert-link-list">
+                    <a class="cert-action-btn mb-2"
+                      href="assets/sertifikat/Troubleshooting%26Debugging/DEBUGGING%20HTML%20AND%20CSS.pdf" rel="noopener noreferrer"
+                      target="_blank">
+                      <i class="bx bx-file-pdf"></i> Debugging HTML and CSS
+                    </a>
+                    <a class="cert-action-btn mb-2" href="assets/sertifikat/Troubleshooting%26Debugging/DEBUGGING%20JAVASCRIPT.pdf"
+                      rel="noopener noreferrer" target="_blank">
+                      <i class="bx bx-file-pdf"></i> Debugging JavaScript
+                    </a>
+                    <a class="cert-action-btn mb-2" href="assets/sertifikat/Troubleshooting%26Debugging/DEBUGGING%20ON%20REACT.pdf"
+                      rel="noopener noreferrer" target="_blank">
+                      <i class="bx bx-file-pdf"></i> Debugging on React
+                    </a>
+                    <a class="cert-action-btn" href="assets/sertifikat/Troubleshooting%26Debugging/TROUBLESHOOTING%20AND%20DEBUGGING.pdf"
+                      rel="noopener noreferrer" target="_blank">
+                      <i class="bx bx-file-pdf"></i> Troubleshooting and Debugging
+                    </a>
+                    </div>
+                </td>
+                </tr>
+                <tr>
+                  <td class="cert-no">5</td>
+                  <td><span class="cert-category-badge design">Design</span></td>
+                  <td>
+                    <div class="cert-title-cell">
+                      <div class="cert-icon-sm design"><i class="bx bx-palette"></i></div>
+                      <span>UI/UX Design</span>
+                    </div>
+                </td>
+                <td>Figma Basic to Advanced</td>
+                <td><span class="cert-action-disabled"><i class="bx bx-time"></i> Segera</span></td>
+                </tr>
+                <tr>
+                  <td class="cert-no">6</td>
+                  <td><span class="cert-category-badge version-control">Version Control</span></td>
+                  <td>
+                    <div class="cert-title-cell">
+                      <div class="cert-icon-sm git"><i class="bx bx-git-branch"></i></div>
+                      <span>Git &amp; GitHub</span>
+                    </div>
+                </td>
+                <td>Workflow, Branching, Commit, dan Repository</td>
+                <td>
+                  <div class="cert-link-list">
+                    <a class="cert-action-btn mb-2" href="assets/sertifikat/Git/BASIC%20COMMAND%20IN%20GIT%20AND%20GITHUB.pdf"
+                      rel="noopener noreferrer" target="_blank">
+                      <i class="bx bx-file-pdf"></i> Basic Command in Git and GitHub
+                    </a>
+                    <a class="cert-action-btn mb-2" href="assets/sertifikat/Git/Belajar%20GIT.pdf" rel="noopener noreferrer"
+                      target="_blank">
+                      <i class="bx bx-file-pdf"></i> Belajar GIT
+                    </a>
+                    <a class="cert-action-btn mb-2" href="assets/sertifikat/Git/GIT%20%26%20GITHUB%20REPOSITORY.pdf"
+                      rel="noopener noreferrer" target="_blank">
+                      <i class="bx bx-file-pdf"></i> Git &amp; GitHub Repository
+                    </a>
+                    <a class="cert-action-btn mb-2" href="assets/sertifikat/Git/GIT%20AND%20GITHUB%20PRACTICE%20I.pdf"
+                      rel="noopener noreferrer" target="_blank">
+                      <i class="bx bx-file-pdf"></i> Git and GitHub Practice I
+                    </a>
+                    <a class="cert-action-btn mb-2" href="assets/sertifikat/Git/GIT%20AND%20GITHUB%20PRACTICE%20II.pdf"
+                      rel="noopener noreferrer" target="_blank">
+                      <i class="bx bx-file-pdf"></i> Git and GitHub Practice II
+                    </a>
+                    <a class="cert-action-btn mb-2" href="assets/sertifikat/Git/GOING%20BACK%20AND%20UNDO%20CHANGES.pdf"
+                      rel="noopener noreferrer" target="_blank">
+                      <i class="bx bx-file-pdf"></i> Going Back and Undo Changes
+                    </a>
+                    <a class="cert-action-btn mb-2" href="assets/sertifikat/Git/HEAD%20AND%20BRANCHES.pdf" rel="noopener noreferrer"
+                      target="_blank">
+                      <i class="bx bx-file-pdf"></i> Head and Branches
+                    </a>
+                    <a class="cert-action-btn mb-2" href="assets/sertifikat/Git/INTRODUCTION%20TO%20GIT%20%26%20GITHUB.pdf"
+                      rel="noopener noreferrer" target="_blank">
+                      <i class="bx bx-file-pdf"></i> Introduction to Git &amp; GitHub
+                    </a>
+                    <a class="cert-action-btn mb-2" href="assets/sertifikat/Git/MERGING%20BRANCH.pdf" rel="noopener noreferrer"
+                      target="_blank">
+                      <i class="bx bx-file-pdf"></i> Merging Branch
+                    </a>
+                    <a class="cert-action-btn mb-2" href="assets/sertifikat/Git/STARTING%20USING%20GIT.pdf" rel="noopener noreferrer"
+                      target="_blank">
+                      <i class="bx bx-file-pdf"></i> Starting Using Git
+                    </a>
+                    <a class="cert-action-btn" href="assets/sertifikat/Git/UNDERSTANDING%20WORKFLOW%20OF%20GIT%20AND%20GITHUB.pdf"
+                      rel="noopener noreferrer" target="_blank">
+                      <i class="bx bx-file-pdf"></i> Understanding Workflow of Git and GitHub
+                    </a>
+                  </div>
+                </td>
+                </tr>
+                <tr>
+                  <td class="cert-no">7</td>
+                  <td><span class="cert-category-badge security">Security</span></td>
+                  <td>
+                    <div class="cert-title-cell">
+                      <div class="cert-icon-sm security"><i class="bx bx-shield-quarter"></i></div>
+                      <span>Web Security</span>
+                    </div>
+                </td>
+                <td>Secure Web Application</td>
+                <td><span class="cert-action-disabled"><i class="bx bx-time"></i> Segera</span></td>
+                </tr>
+                <tr>
+                  <td class="cert-no">8</td>
+                  <td><span class="cert-category-badge business">Business</span></td>
+                  <td>
+                    <div class="cert-title-cell">
+                      <div class="cert-icon-sm business"><i class="bx bx-briefcase"></i></div>
+                      <span>Bisnis Digital</span>
+                    </div>
+                </td>
+                <td>Manajemen usaha digital dan strategi pengembangan produk</td>
+                <td>
+                  <div class="cert-link-list">
+                    <a class="cert-action-btn mb-2"
+                      href="assets/sertifikat/MembangunOnlineShop/KUNJUNGAN%20TOKO%20MAKIN%20MAKSIMAL%20DENGAN%20KONTEN.pdf"
+                      rel="noopener noreferrer" target="_blank">
+                      <i class="bx bx-file-pdf"></i> Kunjungan Toko Makin Maksimal dengan Konten
+                    </a>
+                    <a class="cert-action-btn mb-2"
+                      href="assets/sertifikat/MembangunOnlineShop/MENGUKUR%20PERFORMA%20KESUKSESAN%20MEDIA%20SOSIAL.pdf"
+                      rel="noopener noreferrer" target="_blank">
+                      <i class="bx bx-file-pdf"></i> Mengukur Performa Kesuksesan Media Sosial
+                    </a>
+                    <a class="cert-action-btn"
+                      href="assets/sertifikat/MembangunOnlineShop/PEMASARAN%20MEDIA%20SOSIAL%20UNTUK%20USAHA%20BARU.pdf"
+                      rel="noopener noreferrer" target="_blank">
+                      <i class="bx bx-file-pdf"></i> Pemasaran Media Sosial untuk Usaha Baru
+                      </a>
+                      </div>
+                </td>
+                </tr>
+                </tbody>
+                </table>
+                <div class="text-center mt-4">
+                  <a class="btn btn-modern cert-drive-btn"
+                    href="https://drive.google.com/drive/folders/1KCJ11OoktPxQc3NHcJxyf7SoMQH0_A3l" rel="noopener noreferrer"
+                    target="_blank">
+                    <i class="bx bxl-google mr-2"></i>
+                    Lihat Semua Sertifikat di Google Drive
             </a>
           </div>
         </div>
