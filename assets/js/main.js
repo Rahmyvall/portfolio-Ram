@@ -200,25 +200,77 @@
     );
   }
 
-  // Portfolio isotope dan filter
+  // Portfolio filter (manual, agar track carousel tetap flex-horizontal)
   $(window).on("load", function () {
-    if ($.fn.isotope && $(".portfolio-container").length) {
-      const portfolioIsotope = $(".portfolio-container").isotope({
-        itemSelector: ".portfolio-item",
-        layoutMode: "fitRows"
-      });
+    // Portfolio carousel arrows
+    const $carouselTrack = $(".portfolio-carousel-track");
+    const $arrowLeft = $(".portfolio-arrow-left");
+    const $arrowRight = $(".portfolio-arrow-right");
 
-      $("#portfolio-flters li").on("click", function () {
-        $("#portfolio-flters li").removeClass("filter-active");
-        $(this).addClass("filter-active");
+    function updateArrowState() {
+      if (!$carouselTrack.length) return;
 
-        portfolioIsotope.isotope({
-          filter: $(this).data("filter")
-        });
+      const maxScroll = $carouselTrack[0].scrollWidth - $carouselTrack[0].clientWidth;
 
-        aosInit();
-      });
+      if ($arrowLeft.length) {
+        $arrowLeft.prop("disabled", $carouselTrack[0].scrollLeft <= 1);
+      }
+
+      if ($arrowRight.length) {
+        $arrowRight.prop("disabled", $carouselTrack[0].scrollLeft >= maxScroll - 1);
+      }
     }
+
+    function getStep() {
+      const item = $carouselTrack.find("> .portfolio-item").first();
+      const itemWidth = item.outerWidth(true) || 340;
+      return Math.min(itemWidth * 1, $carouselTrack[0].clientWidth * 0.9);
+    }
+
+    $arrowLeft.on("click", function () {
+      $carouselTrack.animate(
+        { scrollLeft: "-=" + getStep() },
+        420,
+        "swing",
+        updateArrowState
+      );
+    });
+
+    function filterPortfolio(filterValue) {
+      $carouselTrack.find("> .portfolio-item").each(function () {
+        const $item = $(this);
+        const show = filterValue === "*" || $item.hasClass(filterValue.replace(".", ""));
+        $item.css("display", show ? "" : "none");
+      });
+
+      updateArrowState();
+      aosInit();
+    }
+
+    $("#portfolio-flters li").on("click", function () {
+      $("#portfolio-flters li").removeClass("filter-active");
+      $(this).addClass("filter-active");
+      filterPortfolio($(this).data("filter"));
+    });
+
+    $arrowRight.on("click", function () {
+      $carouselTrack.animate(
+        { scrollLeft: "+=" + getStep() },
+        420,
+        "swing",
+        updateArrowState
+      );
+    });
+
+    $carouselTrack.on("scroll", updateArrowState);
+    updateArrowState();
+
+    // Hitung ulang state panah saat ukuran layar berubah (debounced)
+    let resizeTimer;
+    $(window).on("resize", function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(updateArrowState, 150);
+    });
 
     // Venobox lightbox
     if ($.fn.venobox) {
@@ -258,23 +310,3 @@
     });
   }
 })(jQuery);
-
-
-/* Console print */
-console.log(
-  `%c
- __       __            __              _______                                 __
-/  |  _  /  |          /  |            /       \\                               /  |
-$$ | / \\ $$ |  ______  $$ |____        $$$$$$$  |  ______   __     __  ______  $$ |  ______    ______    ______    ______
-$$ |/$  \\$$ | /      \\ $$      \\       $$ |  $$ | /      \\ /  \\   /  |/      \\ $$ | /      \\  /      \\  /      \\  /      \\
-$$ /$$$  $$ |/$$$$$$  |$$$$$$$  |      $$ |  $$ |/$$$$$$  |$$  \\ /$$//$$$$$$  |$$ |/$$$$$$  |/$$$$$$  |/$$$$$$  |/$$$$$$  |
-$$ $$/$$ $$ |$$    $$ |$$ |  $$ |      $$ |  $$ |$$    $$ | $$  /$$/ $$    $$ |$$ |$$ |  $$ |$$ |  $$ |$$    $$ |$$ |  $$/
-$$$$/  $$$$ |$$$$$$$$/ $$ |__$$ |      $$ |__$$ |$$$$$$$$/   $$ $$/  $$$$$$$$/ $$ |$$ \\__$$ |$$ |__$$ |$$$$$$$$/ $$ |
-$$$/    $$$ |$$       |$$    $$/       $$    $$/ $$       |   $$$/   $$       |$$ |$$    $$/ $$    $$/ $$       |$$ |
-$$/      $$/  $$$$$$$/ $$$$$$$/        $$$$$$$/   $$$$$$$/     $/     $$$$$$$/ $$/  $$$$$$/  $$$$$$$/   $$$$$$$/ $$/
-                                                                                             $$ |
-                                                                                             $$ |
-                                                                                             $$/
-`,
-  "font-family: monospace"
-);

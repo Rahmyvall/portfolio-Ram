@@ -378,638 +378,707 @@
         <!-- PORTFOLIO FILTER -->
         <div class="row" data-aos="fade-up">
           <div class="col-12 d-flex justify-content-center">
-            <ul class="portfolio-flters-modern" id="portfolio-flters">
-              <li class="filter-active" data-filter="*">
-                All Projects
-              </li>
-              <li data-filter=".filter-laravel">
-                Laravel
-              </li>
-              <li data-filter=".filter-dashboard">
-                Dashboard
-              </li>
-              <li data-filter=".filter-government">
-                Government
-              </li>
-              <li data-filter=".filter-webapp">
-                Web App
-              </li>
-            </ul>
-            <a class="uiux-direct-link ml-2" href="https://www.behance.net/rahmyvall" rel="noopener noreferrer"
-              target="_blank">
-              UI/UX Design
-            </a>
+            <div class="portfolio-flters-wrap">
+              <ul class="portfolio-flters-modern" id="portfolio-flters">
+                <li class="filter-active" data-filter="*">
+                  All Projects
+                </li>
+                <li data-filter=".filter-laravel">
+                  Laravel
+                </li>
+                <li data-filter=".filter-dashboard">
+                  Dashboard
+                </li>
+                <li data-filter=".filter-government">
+                  Government
+                </li>
+                <li data-filter=".filter-webapp">
+                  Web App
+                </li>
+                <li data-filter=".filter-uiux">
+                  UI/UX Design
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-        <!-- PORTFOLIO GRID -->
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-          <!-- PROJECT 1: APOTEK SYSTEM -->
-          <div class="col-lg-4 col-md-6 portfolio-item filter-fullstack filter-webapp filter-laravel filter-database">
-            <div class="portfolio-wrap modern-card">
-              <div class="portfolio-img-wrapper">
-                <img alt="Tampilan aplikasi Apotek System" class="img-fluid portfolio-image" decoding="async"
-                  loading="lazy" src="assets/img/portfolio/apotek.png" />
-                <div class="portfolio-overlay">
-                  <div aria-label="Teknologi yang digunakan" class="tech-badges">
-                    <span class="badge bg-laravel">
-                      Laravel
-                    </span>
-                    <span class="badge bg-tailwind">
-                      Tailwind CSS
-                    </span>
-                    <span class="badge bg-mysql">
-                      MySQL
-                    </span>
+        <!-- MODERN PORTFOLIO CAROUSEL -->
+        <div class="portfolio-carousel-shell" data-aos="fade-up" data-aos-delay="100">
+          <button class="portfolio-arrow portfolio-arrow-left" type="button" aria-label="Geser proyek ke kiri">
+            <i class="bx bx-chevron-left" aria-hidden="true"></i>
+          </button>
+          <div class="row portfolio-container portfolio-carousel-track">
+            <!-- PROJECT 1: APOTEK SYSTEM -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-fullstack filter-webapp filter-laravel filter-database">
+              <div class="portfolio-wrap modern-card">
+                <div class="portfolio-img-wrapper">
+                  <img alt="Tampilan aplikasi Apotek System" class="img-fluid portfolio-image" decoding="async"
+                    loading="lazy" src="assets/img/portfolio/apotek.png" />
+                  <div class="portfolio-overlay">
+                    <div aria-label="Teknologi yang digunakan" class="tech-badges">
+                      <span class="badge bg-laravel">
+                        Laravel
+                      </span>
+                      <span class="badge bg-tailwind">
+                        Tailwind CSS
+                      </span>
+                      <span class="badge bg-mysql">
+                        MySQL
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="portfolio-info">
+                  <h4>
+                    Apotek System
+                  </h4>
+                  <p class="tech-stack">
+                    Sistem manajemen obat, transaksi, dan persediaan
+                  </p>
+                  <div class="portfolio-links">
+                    <a aria-label="Lihat galeri Apotek System" class="venobox portfolio-action"
+                      data-gall="apotek-gallery" href="assets/img/portfolio/apotek.png" title="Apotek System">
+                      <i aria-hidden="true" class="bx bx-plus">
+                      </i>
+                    </a>
+                    <!-- HIDDEN GALLERY -->
+                    <a aria-hidden="true" class="venobox d-none" data-gall="apotek-gallery"
+                      href="assets/img/portfolio/apotek-1.jpg" tabindex="-1" title="Apotek System - 1">
+                    </a>
+                    <a aria-hidden="true" class="venobox d-none" data-gall="apotek-gallery"
+                      href="assets/img/portfolio/apotek-2.jpg" tabindex="-1" title="Apotek System - 2">
+                    </a>
+                    <a aria-hidden="true" class="venobox d-none" data-gall="apotek-gallery"
+                      href="assets/img/portfolio/apotek-3.jpg" tabindex="-1" title="Apotek System - 3">
+                    </a>
+                    <a aria-label="Lihat repositori Apotek System" class="btn-detail portfolio-action"
+                      href="https://github.com/Rahmyvall" rel="noopener noreferrer" target="_blank"
+                      title="Lihat repositori proyek">
+                      <i aria-hidden="true" class="bx bx-link">
+                      </i>
+                    </a>
                   </div>
                 </div>
               </div>
-              <div class="portfolio-info">
-                <h4>
-                  Apotek System
-                </h4>
-                <p class="tech-stack">
-                  Sistem manajemen obat, transaksi, dan persediaan
-                </p>
-                <div class="portfolio-links">
-                  <a aria-label="Lihat galeri Apotek System" class="venobox portfolio-action" data-gall="apotek-gallery"
-                    href="assets/img/portfolio/apotek.png" title="Apotek System">
-                    <i aria-hidden="true" class="bx bx-plus">
-                    </i>
-                  </a>
-                  <!-- HIDDEN GALLERY -->
-                  <a aria-hidden="true" class="venobox d-none" data-gall="apotek-gallery"
-                    href="assets/img/portfolio/apotek-1.jpg" tabindex="-1" title="Apotek System - 1">
-                  </a>
-                  <a aria-hidden="true" class="venobox d-none" data-gall="apotek-gallery"
-                    href="assets/img/portfolio/apotek-2.jpg" tabindex="-1" title="Apotek System - 2">
-                  </a>
-                  <a aria-hidden="true" class="venobox d-none" data-gall="apotek-gallery"
-                    href="assets/img/portfolio/apotek-3.jpg" tabindex="-1" title="Apotek System - 3">
-                  </a>
-                  <a aria-label="Lihat repositori Apotek System" class="btn-detail portfolio-action"
-                    href="https://github.com/Rahmyvall" rel="noopener noreferrer" target="_blank"
-                    title="Lihat repositori proyek">
-                    <i aria-hidden="true" class="bx bx-link">
-                    </i>
-                  </a>
-                </div>
-              </div>
             </div>
-          </div>
-          <!-- PROJECT 2: DASHBOARD KASUS -->
-          <div
-            class="col-lg-4 col-md-6 portfolio-item filter-fullstack filter-dashboard filter-laravel filter-javascript">
-            <div class="portfolio-wrap modern-card">
-              <div class="portfolio-img-wrapper">
-                <img alt="Tampilan Dashboard Kasus" class="img-fluid portfolio-image" decoding="async" loading="lazy"
-                  src="assets/img/portfolio/dashboard-kasus.jpg" />
-                <div class="portfolio-overlay">
-                  <div aria-label="Teknologi yang digunakan" class="tech-badges">
-                    <span class="badge bg-laravel">
-                      Laravel
-                    </span>
-                    <span class="badge bg-vue">
-                      Vue.js
-                    </span>
-                    <span class="badge bg-warning text-dark">
-                      JavaScript
-                    </span>
+            <!-- PROJECT 2: DASHBOARD KASUS -->
+            <div
+              class="col-lg-4 col-md-6 portfolio-item filter-fullstack filter-dashboard filter-laravel filter-javascript">
+              <div class="portfolio-wrap modern-card">
+                <div class="portfolio-img-wrapper">
+                  <img alt="Tampilan Dashboard Kasus" class="img-fluid portfolio-image" decoding="async" loading="lazy"
+                    src="assets/img/portfolio/dashboard-kasus.jpg" />
+                  <div class="portfolio-overlay">
+                    <div aria-label="Teknologi yang digunakan" class="tech-badges">
+                      <span class="badge bg-laravel">
+                        Laravel
+                      </span>
+                      <span class="badge bg-vue">
+                        Vue.js
+                      </span>
+                      <span class="badge bg-warning text-dark">
+                        JavaScript
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="portfolio-info">
+                  <h4>
+                    Dashboard Kasus
+                  </h4>
+                  <p class="tech-stack">
+                    Dashboard pelacakan data, visualisasi, dan analitik
+                  </p>
+                  <div class="portfolio-links">
+                    <a aria-label="Lihat galeri Dashboard Kasus" class="venobox portfolio-action"
+                      data-gall="kasus-gallery" href="assets/img/portfolio/dashboard-kasus.jpg" title="Dashboard Kasus">
+                      <i aria-hidden="true" class="bx bx-plus">
+                      </i>
+                    </a>
+                    <!-- HIDDEN GALLERY -->
+                    <a aria-hidden="true" class="venobox d-none" data-gall="kasus-gallery"
+                      href="assets/img/portfolio/dashboard-kasus-1.png" tabindex="-1" title="Dashboard Kasus - 1">
+                    </a>
+                    <a aria-hidden="true" class="venobox d-none" data-gall="kasus-gallery"
+                      href="assets/img/portfolio/dashboard-kasus-2.png" tabindex="-1" title="Dashboard Kasus - 2">
+                    </a>
+                    <a aria-hidden="true" class="venobox d-none" data-gall="kasus-gallery"
+                      href="assets/img/portfolio/dashboard-kasus-3.png" tabindex="-1" title="Dashboard Kasus - 3">
+                    </a>
+                    <a aria-label="Lihat repositori Dashboard Kasus" class="btn-detail portfolio-action"
+                      href="https://github.com/Rahmyvall" rel="noopener noreferrer" target="_blank"
+                      title="Lihat repositori proyek">
+                      <i aria-hidden="true" class="bx bx-link">
+                      </i>
+                    </a>
                   </div>
                 </div>
               </div>
-              <div class="portfolio-info">
-                <h4>
-                  Dashboard Kasus
-                </h4>
-                <p class="tech-stack">
-                  Dashboard pelacakan data, visualisasi, dan analitik
-                </p>
-                <div class="portfolio-links">
-                  <a aria-label="Lihat galeri Dashboard Kasus" class="venobox portfolio-action"
-                    data-gall="kasus-gallery" href="assets/img/portfolio/dashboard-kasus.jpg" title="Dashboard Kasus">
-                    <i aria-hidden="true" class="bx bx-plus">
-                    </i>
-                  </a>
-                  <!-- HIDDEN GALLERY -->
-                  <a aria-hidden="true" class="venobox d-none" data-gall="kasus-gallery"
-                    href="assets/img/portfolio/dashboard-kasus-1.png" tabindex="-1" title="Dashboard Kasus - 1">
-                  </a>
-                  <a aria-hidden="true" class="venobox d-none" data-gall="kasus-gallery"
-                    href="assets/img/portfolio/dashboard-kasus-2.png" tabindex="-1" title="Dashboard Kasus - 2">
-                  </a>
-                  <a aria-hidden="true" class="venobox d-none" data-gall="kasus-gallery"
-                    href="assets/img/portfolio/dashboard-kasus-3.png" tabindex="-1" title="Dashboard Kasus - 3">
-                  </a>
-                  <a aria-label="Lihat repositori Dashboard Kasus" class="btn-detail portfolio-action"
-                    href="https://github.com/Rahmyvall" rel="noopener noreferrer" target="_blank"
-                    title="Lihat repositori proyek">
-                    <i aria-hidden="true" class="bx bx-link">
-                    </i>
-                  </a>
-                </div>
-              </div>
             </div>
-          </div>
-          <!-- PROJECT 3: PETERNAKAN SYSTEM -->
-          <div class="col-lg-4 col-md-6 portfolio-item filter-fullstack filter-webapp filter-laravel filter-database">
-            <div class="portfolio-wrap modern-card">
-              <div class="portfolio-img-wrapper">
-                <img alt="Tampilan aplikasi Peternakan System" class="img-fluid portfolio-image" decoding="async"
-                  loading="lazy" src="assets/img/portfolio/dashboard-peternakan.png" />
-                <div class="portfolio-overlay">
-                  <div aria-label="Teknologi yang digunakan" class="tech-badges">
-                    <span class="badge bg-laravel">
-                      Laravel
-                    </span>
-                    <span class="badge bg-tailwind">
-                      Tailwind CSS
-                    </span>
-                    <span class="badge bg-mysql">
-                      MySQL
-                    </span>
+            <!-- PROJECT 3: PETERNAKAN SYSTEM -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-fullstack filter-webapp filter-laravel filter-database">
+              <div class="portfolio-wrap modern-card">
+                <div class="portfolio-img-wrapper">
+                  <img alt="Tampilan aplikasi Peternakan System" class="img-fluid portfolio-image" decoding="async"
+                    loading="lazy" src="assets/img/portfolio/dashboard-peternakan.png" />
+                  <div class="portfolio-overlay">
+                    <div aria-label="Teknologi yang digunakan" class="tech-badges">
+                      <span class="badge bg-laravel">
+                        Laravel
+                      </span>
+                      <span class="badge bg-tailwind">
+                        Tailwind CSS
+                      </span>
+                      <span class="badge bg-mysql">
+                        MySQL
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="portfolio-info">
+                  <h4>
+                    Peternakan System
+                  </h4>
+                  <p class="tech-stack">
+                    Sistem operasional, pencatatan ternak, dan manajemen stok
+                  </p>
+                  <div class="portfolio-links">
+                    <a aria-label="Lihat galeri Peternakan System" class="venobox portfolio-action"
+                      data-gall="peternakan-gallery" href="assets/img/portfolio/dashboard-peternakan.png"
+                      title="Peternakan System">
+                      <i aria-hidden="true" class="bx bx-plus">
+                      </i>
+                    </a>
+                    <!-- HIDDEN GALLERY -->
+                    <a aria-hidden="true" class="venobox d-none" data-gall="peternakan-gallery"
+                      href="assets/img/portfolio/dashboard-peternakan-1.png" tabindex="-1"
+                      title="Peternakan System - 1">
+                    </a>
+                    <a aria-hidden="true" class="venobox d-none" data-gall="peternakan-gallery"
+                      href="assets/img/portfolio/dashboard-peternakan-2.png" tabindex="-1"
+                      title="Peternakan System - 2">
+                    </a>
+                    <a aria-hidden="true" class="venobox d-none" data-gall="peternakan-gallery"
+                      href="assets/img/portfolio/dashboard-peternakan-3.png" tabindex="-1"
+                      title="Peternakan System - 3">
+                    </a>
+                    <a aria-hidden="true" class="venobox d-none" data-gall="peternakan-gallery"
+                      href="assets/img/portfolio/dashboard-peternakan-4.png" tabindex="-1"
+                      title="Peternakan System - 4">
+                    </a>
+                    <a aria-label="Lihat repositori Peternakan System" class="btn-detail portfolio-action"
+                      href="https://github.com/Rahmyvall" rel="noopener noreferrer" target="_blank"
+                      title="Lihat repositori proyek">
+                      <i aria-hidden="true" class="bx bx-link">
+                      </i>
+                    </a>
                   </div>
                 </div>
               </div>
-              <div class="portfolio-info">
-                <h4>
-                  Peternakan System
-                </h4>
-                <p class="tech-stack">
-                  Sistem operasional, pencatatan ternak, dan manajemen stok
-                </p>
-                <div class="portfolio-links">
-                  <a aria-label="Lihat galeri Peternakan System" class="venobox portfolio-action"
-                    data-gall="peternakan-gallery" href="assets/img/portfolio/dashboard-peternakan.png"
-                    title="Peternakan System">
-                    <i aria-hidden="true" class="bx bx-plus">
-                    </i>
-                  </a>
-                  <!-- HIDDEN GALLERY -->
-                  <a aria-hidden="true" class="venobox d-none" data-gall="peternakan-gallery"
-                    href="assets/img/portfolio/dashboard-peternakan-1.png" tabindex="-1" title="Peternakan System - 1">
-                  </a>
-                  <a aria-hidden="true" class="venobox d-none" data-gall="peternakan-gallery"
-                    href="assets/img/portfolio/dashboard-peternakan-2.png" tabindex="-1" title="Peternakan System - 2">
-                  </a>
-                  <a aria-hidden="true" class="venobox d-none" data-gall="peternakan-gallery"
-                    href="assets/img/portfolio/dashboard-peternakan-3.png" tabindex="-1" title="Peternakan System - 3">
-                  </a>
-                  <a aria-hidden="true" class="venobox d-none" data-gall="peternakan-gallery"
-                    href="assets/img/portfolio/dashboard-peternakan-4.png" tabindex="-1" title="Peternakan System - 4">
-                  </a>
-                  <a aria-label="Lihat repositori Peternakan System" class="btn-detail portfolio-action"
-                    href="https://github.com/Rahmyvall" rel="noopener noreferrer" target="_blank"
-                    title="Lihat repositori proyek">
-                    <i aria-hidden="true" class="bx bx-link">
-                    </i>
-                  </a>
-                </div>
-              </div>
             </div>
-          </div>
-          <!-- PROJECT 4: HRIS SYSTEM -->
-          <div class="col-lg-4 col-md-6 portfolio-item filter-fullstack filter-webapp filter-laravel filter-database">
-            <div class="portfolio-wrap modern-card">
-              <div class="portfolio-img-wrapper">
-                <img alt="Tampilan aplikasi HRIS System" class="img-fluid portfolio-image" decoding="async"
-                  loading="lazy" src="assets/img/portfolio/hris-laravel.jpg" />
-                <div class="portfolio-overlay">
-                  <div aria-label="Teknologi yang digunakan" class="tech-badges">
-                    <span class="badge bg-laravel">
-                      Laravel 12
-                    </span>
-                    <span class="badge bg-tailwind">
-                      Tailwind CSS
-                    </span>
-                    <span class="badge bg-mysql">
-                      MySQL
-                    </span>
-                    <span class="badge bg-role">
-                      RBAC
-                    </span>
+            <!-- PROJECT 4: HRIS SYSTEM -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-fullstack filter-webapp filter-laravel filter-database">
+              <div class="portfolio-wrap modern-card">
+                <div class="portfolio-img-wrapper">
+                  <img alt="Tampilan aplikasi HRIS System" class="img-fluid portfolio-image" decoding="async"
+                    loading="lazy" src="assets/img/portfolio/hris-laravel.jpg" />
+                  <div class="portfolio-overlay">
+                    <div aria-label="Teknologi yang digunakan" class="tech-badges">
+                      <span class="badge bg-laravel">
+                        Laravel 12
+                      </span>
+                      <span class="badge bg-tailwind">
+                        Tailwind CSS
+                      </span>
+                      <span class="badge bg-mysql">
+                        MySQL
+                      </span>
+                      <span class="badge bg-role">
+                        RBAC
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="portfolio-info">
+                  <h4>
+                    HRIS System
+                  </h4>
+                  <p class="tech-stack">
+                    Sistem pengelolaan karyawan, absensi, hak akses, dan payroll
+                  </p>
+                  <div class="portfolio-links">
+                    <a aria-label="Lihat galeri HRIS System" class="venobox portfolio-action" data-gall="hris-gallery"
+                      href="assets/img/portfolio/hris-laravel.jpg" title="HRIS System">
+                      <i aria-hidden="true" class="bx bx-plus">
+                      </i>
+                    </a>
+                    <!-- HIDDEN GALLERY -->
+                    <a aria-hidden="true" class="venobox d-none" data-gall="hris-gallery"
+                      href="assets/img/portfolio/hris-full.jpg" tabindex="-1" title="HRIS System - Dashboard">
+                    </a>
+                    <a aria-hidden="true" class="venobox d-none" data-gall="hris-gallery"
+                      href="assets/img/portfolio/hris-payroll.jpg" tabindex="-1" title="HRIS System - Payroll">
+                    </a>
+                    <a aria-label="Lihat repositori HRIS System" class="btn-detail portfolio-action"
+                      href="https://github.com/Rahmyvall" rel="noopener noreferrer" target="_blank"
+                      title="Lihat repositori proyek">
+                      <i aria-hidden="true" class="bx bx-link">
+                      </i>
+                    </a>
                   </div>
                 </div>
               </div>
-              <div class="portfolio-info">
-                <h4>
-                  HRIS System
-                </h4>
-                <p class="tech-stack">
-                  Sistem pengelolaan karyawan, absensi, hak akses, dan payroll
-                </p>
-                <div class="portfolio-links">
-                  <a aria-label="Lihat galeri HRIS System" class="venobox portfolio-action" data-gall="hris-gallery"
-                    href="assets/img/portfolio/hris-laravel.jpg" title="HRIS System">
-                    <i aria-hidden="true" class="bx bx-plus">
-                    </i>
-                  </a>
-                  <!-- HIDDEN GALLERY -->
-                  <a aria-hidden="true" class="venobox d-none" data-gall="hris-gallery"
-                    href="assets/img/portfolio/hris-full.jpg" tabindex="-1" title="HRIS System - Dashboard">
-                  </a>
-                  <a aria-hidden="true" class="venobox d-none" data-gall="hris-gallery"
-                    href="assets/img/portfolio/hris-payroll.jpg" tabindex="-1" title="HRIS System - Payroll">
-                  </a>
-                  <a aria-label="Lihat repositori HRIS System" class="btn-detail portfolio-action"
-                    href="https://github.com/Rahmyvall" rel="noopener noreferrer" target="_blank"
-                    title="Lihat repositori proyek">
-                    <i aria-hidden="true" class="bx bx-link">
-                    </i>
-                  </a>
-                </div>
-              </div>
             </div>
-          </div>
-          <!-- PROJECT 5: SQL CASE STUDY -->
-          <div class="col-lg-4 col-md-6 portfolio-item filter-backend filter-database filter-sql">
-            <div class="portfolio-wrap modern-card">
-              <div class="portfolio-img-wrapper">
-                <img alt="Tampilan SQL Case Study" class="img-fluid portfolio-image" decoding="async" loading="lazy"
-                  src="assets/ppt/1.png" />
-                <div class="portfolio-overlay">
-                  <div aria-label="Teknologi yang digunakan" class="tech-badges">
-                    <span class="badge bg-dark">
-                      SQL
-                    </span>
-                    <span class="badge bg-mysql">
-                      MySQL
-                    </span>
-                    <span class="badge bg-info text-dark">
-                      PostgreSQL
-                    </span>
+            <!-- PROJECT 5: SQL CASE STUDY -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-backend filter-database filter-sql">
+              <div class="portfolio-wrap modern-card">
+                <div class="portfolio-img-wrapper">
+                  <img alt="Tampilan SQL Case Study" class="img-fluid portfolio-image" decoding="async" loading="lazy"
+                    src="assets/ppt/1.png" />
+                  <div class="portfolio-overlay">
+                    <div aria-label="Teknologi yang digunakan" class="tech-badges">
+                      <span class="badge bg-dark">
+                        SQL
+                      </span>
+                      <span class="badge bg-mysql">
+                        MySQL
+                      </span>
+                      <span class="badge bg-info text-dark">
+                        PostgreSQL
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="portfolio-info">
+                  <h4>
+                    SQL Case Study
+                  </h4>
+                  <p class="tech-stack">
+                    Perancangan database, query, relasi, dan optimasi data
+                  </p>
+                  <div class="portfolio-links">
+                    <a aria-label="Lihat galeri SQL Case Study" class="venobox portfolio-action" data-gall="sql-gallery"
+                      href="assets/ppt/1.png" title="SQL Case Study - 1">
+                      <i aria-hidden="true" class="bx bx-plus">
+                      </i>
+                    </a>
+                    <!-- HIDDEN GALLERY -->
+                    <a aria-hidden="true" class="venobox d-none" data-gall="sql-gallery" href="assets/ppt/2.png"
+                      tabindex="-1" title="SQL Case Study - 2">
+                    </a>
+                    <!-- DOWNLOAD PRESENTATION -->
+                    <a aria-label="Unduh presentasi SQL Case Study" class="btn-detail portfolio-action" download=""
+                      href="assets/ppt/Case_Study_Implementing_SQL_TechCorp.pptx"
+                      title="Unduh presentasi SQL Case Study">
+                      <i aria-hidden="true" class="bx bx-slideshow">
+                      </i>
+                    </a>
                   </div>
                 </div>
               </div>
-              <div class="portfolio-info">
-                <h4>
-                  SQL Case Study
-                </h4>
-                <p class="tech-stack">
-                  Perancangan database, query, relasi, dan optimasi data
-                </p>
-                <div class="portfolio-links">
-                  <a aria-label="Lihat galeri SQL Case Study" class="venobox portfolio-action" data-gall="sql-gallery"
-                    href="assets/ppt/1.png" title="SQL Case Study - 1">
-                    <i aria-hidden="true" class="bx bx-plus">
-                    </i>
-                  </a>
-                  <!-- HIDDEN GALLERY -->
-                  <a aria-hidden="true" class="venobox d-none" data-gall="sql-gallery" href="assets/ppt/2.png"
-                    tabindex="-1" title="SQL Case Study - 2">
-                  </a>
-                  <!-- DOWNLOAD PRESENTATION -->
-                  <a aria-label="Unduh presentasi SQL Case Study" class="btn-detail portfolio-action" download=""
-                    href="assets/ppt/Case_Study_Implementing_SQL_TechCorp.pptx" title="Unduh presentasi SQL Case Study">
-                    <i aria-hidden="true" class="bx bx-slideshow">
-                    </i>
-                  </a>
-                </div>
-              </div>
             </div>
-          </div>
-          <!-- PROJECT 6: PUBLIC TRANSPORTATION DASHBOARD -->
-          <div
-            class="col-lg-4 col-md-6 portfolio-item filter-fullstack filter-government filter-dashboard filter-laravel filter-database">
-            <div class="portfolio-wrap modern-card">
-              <div class="portfolio-img-wrapper">
-                <img alt="Tampilan Public Transportation Dashboard" class="img-fluid portfolio-image" decoding="async"
-                  loading="lazy" src="assets/img/portfolio/1.png" />
-                <div class="portfolio-overlay">
-                  <div aria-label="Teknologi yang digunakan" class="tech-badges">
-                    <span class="badge bg-laravel">
-                      Laravel
-                    </span>
-                    <span class="badge bg-warning text-dark">
-                      JavaScript
-                    </span>
-                    <span class="badge bg-chart">
-                      Chart.js
-                    </span>
-                    <span class="badge bg-mysql">
-                      MySQL
-                    </span>
+            <!-- PROJECT 6: PUBLIC TRANSPORTATION DASHBOARD -->
+            <div
+              class="col-lg-4 col-md-6 portfolio-item filter-fullstack filter-government filter-dashboard filter-laravel filter-database">
+              <div class="portfolio-wrap modern-card">
+                <div class="portfolio-img-wrapper">
+                  <img alt="Tampilan Public Transportation Dashboard" class="img-fluid portfolio-image" decoding="async"
+                    loading="lazy" src="assets/img/portfolio/1.png" />
+                  <div class="portfolio-overlay">
+                    <div aria-label="Teknologi yang digunakan" class="tech-badges">
+                      <span class="badge bg-laravel">
+                        Laravel
+                      </span>
+                      <span class="badge bg-warning text-dark">
+                        JavaScript
+                      </span>
+                      <span class="badge bg-chart">
+                        Chart.js
+                      </span>
+                      <span class="badge bg-mysql">
+                        MySQL
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="portfolio-info">
+                  <h4>
+                    Public Transportation Dashboard
+                  </h4>
+                  <p class="tech-stack">
+                    Dashboard monitoring, pelaporan, dan visualisasi transportasi publik
+                  </p>
+                  <div class="portfolio-links">
+                    <a aria-label="Lihat galeri Public Transportation Dashboard" class="venobox portfolio-action"
+                      data-gall="transportasi-publik-gallery" href="assets/img/portfolio/1.png"
+                      title="Public Transportation Dashboard">
+                      <i aria-hidden="true" class="bx bx-plus">
+                      </i>
+                    </a>
+                    <!-- HIDDEN GALLERY -->
+                    <a aria-hidden="true" class="venobox d-none" data-gall="transportasi-publik-gallery"
+                      href="assets/img/portfolio/2.png" tabindex="-1" title="Public Transportation Dashboard - 2">
+                    </a>
+                    <a aria-hidden="true" class="venobox d-none" data-gall="transportasi-publik-gallery"
+                      href="assets/img/portfolio/3.png" tabindex="-1" title="Public Transportation Dashboard - 3">
+                    </a>
+                    <a aria-hidden="true" class="venobox d-none" data-gall="transportasi-publik-gallery"
+                      href="assets/img/portfolio/4.png" tabindex="-1" title="Public Transportation Dashboard - 4">
+                    </a>
+                    <a aria-hidden="true" class="venobox d-none" data-gall="transportasi-publik-gallery"
+                      href="assets/img/portfolio/5.png" tabindex="-1" title="Public Transportation Dashboard - 5">
+                    </a>
+                    <a aria-hidden="true" class="venobox d-none" data-gall="transportasi-publik-gallery"
+                      href="assets/img/portfolio/6.png" tabindex="-1" title="Public Transportation Dashboard - 6">
+                    </a>
+                    <a aria-label="Lihat repositori Public Transportation Dashboard" class="btn-detail portfolio-action"
+                      href="https://github.com/Rahmyvall" rel="noopener noreferrer" target="_blank"
+                      title="Lihat repositori proyek">
+                      <i aria-hidden="true" class="bx bx-link">
+                      </i>
+                    </a>
                   </div>
                 </div>
               </div>
-              <div class="portfolio-info">
-                <h4>
-                  Public Transportation Dashboard
-                </h4>
-                <p class="tech-stack">
-                  Dashboard monitoring, pelaporan, dan visualisasi transportasi publik
-                </p>
-                <div class="portfolio-links">
-                  <a aria-label="Lihat galeri Public Transportation Dashboard" class="venobox portfolio-action"
-                    data-gall="transportasi-publik-gallery" href="assets/img/portfolio/1.png"
-                    title="Public Transportation Dashboard">
-                    <i aria-hidden="true" class="bx bx-plus">
-                    </i>
-                  </a>
-                  <!-- HIDDEN GALLERY -->
-                  <a aria-hidden="true" class="venobox d-none" data-gall="transportasi-publik-gallery"
-                    href="assets/img/portfolio/2.png" tabindex="-1" title="Public Transportation Dashboard - 2">
-                  </a>
-                  <a aria-hidden="true" class="venobox d-none" data-gall="transportasi-publik-gallery"
-                    href="assets/img/portfolio/3.png" tabindex="-1" title="Public Transportation Dashboard - 3">
-                  </a>
-                  <a aria-hidden="true" class="venobox d-none" data-gall="transportasi-publik-gallery"
-                    href="assets/img/portfolio/4.png" tabindex="-1" title="Public Transportation Dashboard - 4">
-                  </a>
-                  <a aria-hidden="true" class="venobox d-none" data-gall="transportasi-publik-gallery"
-                    href="assets/img/portfolio/5.png" tabindex="-1" title="Public Transportation Dashboard - 5">
-                  </a>
-                  <a aria-hidden="true" class="venobox d-none" data-gall="transportasi-publik-gallery"
-                    href="assets/img/portfolio/6.png" tabindex="-1" title="Public Transportation Dashboard - 6">
-                  </a>
-                  <a aria-label="Lihat repositori Public Transportation Dashboard" class="btn-detail portfolio-action"
-                    href="https://github.com/Rahmyvall" rel="noopener noreferrer" target="_blank"
-                    title="Lihat repositori proyek">
-                    <i aria-hidden="true" class="bx bx-link">
-                    </i>
-                  </a>
-                </div>
-              </div>
             </div>
-          </div>
 
-          <!-- PROJECT 7: Dashboard Monitoring Produktivitas, Aktivitas, dan Transaksi Jasa Berbasis Web -->
-          <div
-            class="col-lg-4 col-md-6 portfolio-item filter-fullstack filter-service filter-dashboard filter-laravel filter-database">
-
-            <div class="portfolio-wrap modern-card">
-
-              <!-- IMAGE -->
-              <div class="portfolio-img-wrapper">
-                <img alt="Sistem Dashboard Monitoring Produktivitas, Aktivitas, dan Transaksi Jasa"
-                  class="img-fluid portfolio-image" decoding="async" loading="lazy"
-                  src="assets/img/portfolio/s/1.png" />
-
-                <!-- TECHNOLOGY BADGES -->
-                <div class="portfolio-overlay">
-                  <div aria-label="Teknologi yang digunakan" class="tech-badges">
-
-                    <span class="badge bg-laravel">
-                      Laravel
-                    </span>
-
-                    <span class="badge bg-php">
-                      PHP
-                    </span>
-
-                    <span class="badge bg-mysql">
-                      MySQL
-                    </span>
-
-                    <span class="badge bg-bootstrap">
-                      Bootstrap
-                    </span>
-
-                    <span class="badge bg-warning text-dark">
-                      JavaScript
-                    </span>
-
-                    <span class="badge bg-chart">
-                      Chart.js
-                    </span>
-
-                    <span class="badge bg-api">
-                      REST API
-                    </span>
-
-                    <span class="badge bg-git">
-                      Git / GitHub
-                    </span>
-
-                    <span class="badge bg-docker">
-                      Docker
-                    </span>
-
+            <!-- PROJECT 7: Dashboard Monitoring Produktivitas, Aktivitas, dan Transaksi Jasa Berbasis Web -->
+            <div
+              class="col-lg-4 col-md-6 portfolio-item filter-fullstack filter-service filter-dashboard filter-laravel filter-database">
+              <div class="portfolio-wrap modern-card">
+                <!-- IMAGE -->
+                <div class="portfolio-img-wrapper">
+                  <img alt="Sistem Dashboard Monitoring Produktivitas, Aktivitas, dan Transaksi Jasa"
+                    class="img-fluid portfolio-image" decoding="async" loading="lazy"
+                    src="assets/img/portfolio/s/1.png" />
+                  <!-- TECHNOLOGY BADGES -->
+                  <div class="portfolio-overlay">
+                    <div aria-label="Teknologi yang digunakan" class="tech-badges">
+                      <span class="badge bg-laravel">
+                        Laravel
+                      </span>
+                      <span class="badge bg-php">
+                        PHP
+                      </span>
+                      <span class="badge bg-mysql">
+                        MySQL
+                      </span>
+                      <span class="badge bg-bootstrap">
+                        Bootstrap
+                      </span>
+                      <span class="badge bg-warning text-dark">
+                        JavaScript
+                      </span>
+                      <span class="badge bg-chart">
+                        Chart.js
+                      </span>
+                      <span class="badge bg-api">
+                        REST API
+                      </span>
+                      <span class="badge bg-git">
+                        Git / GitHub
+                      </span>
+                      <span class="badge bg-docker">
+                        Docker
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <!-- PORTFOLIO INFO -->
+                <div class="portfolio-info">
+                  <h4>
+                    Sistem Dashboard Monitoring Produktivitas, Aktivitas, dan Transaksi Jasa
+                  </h4>
+                  <p class="tech-stack">
+                    Dashboard berbasis web untuk memantau produktivitas,
+                    aktivitas operasional, dan transaksi jasa secara terstruktur,
+                    real-time, dan mudah dianalisis.
+                  </p>
+                  <div class="portfolio-links">
+                    <!-- MAIN GALLERY -->
+                    <a aria-label="Lihat galeri Sistem Dashboard Monitoring Produktivitas, Aktivitas, dan Transaksi Jasa"
+                      class="venobox portfolio-action" data-gall="dashboard-jasa-gallery"
+                      href="assets/img/portfolio/s/1.png"
+                      title="Sistem Dashboard Monitoring Produktivitas, Aktivitas, dan Transaksi Jasa">
+                      <i aria-hidden="true" class="bx bx-plus">
+                      </i>
+                    </a>
+                    <!-- HIDDEN GALLERY -->
+                    <a aria-hidden="true" class="venobox d-none" data-gall="dashboard-jasa-gallery"
+                      href="assets/img/portfolio/s/2.png" tabindex="-1"
+                      title="Dashboard Monitoring Produktivitas, Aktivitas, dan Transaksi Jasa - Dashboard">
+                    </a>
+                    <a aria-hidden="true" class="venobox d-none" data-gall="dashboard-jasa-gallery"
+                      href="assets/img/portfolio/s/3.png" tabindex="-1"
+                      title="Dashboard Monitoring Produktivitas, Aktivitas, dan Transaksi Jasa - Produktivitas">
+                    </a>
+                    <a aria-hidden="true" class="venobox d-none" data-gall="dashboard-jasa-gallery"
+                      href="assets/img/portfolio/s/4.png" tabindex="-1"
+                      title="Dashboard Monitoring Produktivitas, Aktivitas, dan Transaksi Jasa - Aktivitas">
+                    </a>
+                    <a aria-hidden="true" class="venobox d-none" data-gall="dashboard-jasa-gallery"
+                      href="assets/img/portfolio/s/5.png" tabindex="-1"
+                      title="Dashboard Monitoring Produktivitas, Aktivitas, dan Transaksi Jasa - Transaksi">
+                    </a>
+                    <a aria-hidden="true" class="venobox d-none" data-gall="dashboard-jasa-gallery"
+                      href="assets/img/portfolio/s/6.png" tabindex="-1"
+                      title="Dashboard Monitoring Produktivitas, Aktivitas, dan Transaksi Jasa - Laporan">
+                    </a>
+                    <!-- GITHUB -->
+                    <a aria-label="Lihat repositori Sistem Dashboard Monitoring Produktivitas, Aktivitas, dan Transaksi Jasa"
+                      class="btn-detail portfolio-action" href="https://github.com/Rahmyvall" rel="noopener noreferrer"
+                      target="_blank" title="Lihat repositori proyek">
+                      <i aria-hidden="true" class="bx bx-link">
+                      </i>
+                    </a>
                   </div>
                 </div>
               </div>
-
-              <!-- PORTFOLIO INFO -->
-              <div class="portfolio-info">
-
-                <h4>
-                  Sistem Dashboard Monitoring Produktivitas, Aktivitas, dan Transaksi Jasa
-                </h4>
-
-                <p class="tech-stack">
-                  Dashboard berbasis web untuk memantau produktivitas,
-                  aktivitas operasional, dan transaksi jasa secara terstruktur,
-                  real-time, dan mudah dianalisis.
-                </p>
-
-                <div class="portfolio-links">
-
-                  <!-- MAIN GALLERY -->
-                  <a aria-label="Lihat galeri Sistem Dashboard Monitoring Produktivitas, Aktivitas, dan Transaksi Jasa"
-                    class="venobox portfolio-action" data-gall="dashboard-jasa-gallery"
-                    href="assets/img/portfolio/s/1.png"
-                    title="Sistem Dashboard Monitoring Produktivitas, Aktivitas, dan Transaksi Jasa">
-
-                    <i aria-hidden="true" class="bx bx-plus">
-                    </i>
-
-                  </a>
-
-                  <!-- HIDDEN GALLERY -->
-                  <a aria-hidden="true" class="venobox d-none" data-gall="dashboard-jasa-gallery"
-                    href="assets/img/portfolio/s/2.png" tabindex="-1"
-                    title="Dashboard Monitoring Produktivitas, Aktivitas, dan Transaksi Jasa - Dashboard">
-                  </a>
-
-                  <a aria-hidden="true" class="venobox d-none" data-gall="dashboard-jasa-gallery"
-                    href="assets/img/portfolio/s/3.png" tabindex="-1"
-                    title="Dashboard Monitoring Produktivitas, Aktivitas, dan Transaksi Jasa - Produktivitas">
-                  </a>
-
-                  <a aria-hidden="true" class="venobox d-none" data-gall="dashboard-jasa-gallery"
-                    href="assets/img/portfolio/s/4.png" tabindex="-1"
-                    title="Dashboard Monitoring Produktivitas, Aktivitas, dan Transaksi Jasa - Aktivitas">
-                  </a>
-
-                  <a aria-hidden="true" class="venobox d-none" data-gall="dashboard-jasa-gallery"
-                    href="assets/img/portfolio/s/5.png" tabindex="-1"
-                    title="Dashboard Monitoring Produktivitas, Aktivitas, dan Transaksi Jasa - Transaksi">
-                  </a>
-
-                  <a aria-hidden="true" class="venobox d-none" data-gall="dashboard-jasa-gallery"
-                    href="assets/img/portfolio/s/6.png" tabindex="-1"
-                    title="Dashboard Monitoring Produktivitas, Aktivitas, dan Transaksi Jasa - Laporan">
-                  </a>
-
-                  <!-- GITHUB -->
-                  <a aria-label="Lihat repositori Sistem Dashboard Monitoring Produktivitas, Aktivitas, dan Transaksi Jasa"
-                    class="btn-detail portfolio-action" href="https://github.com/Rahmyvall" rel="noopener noreferrer"
-                    target="_blank" title="Lihat repositori proyek">
-
-                    <i aria-hidden="true" class="bx bx-link">
-                    </i>
-
-                  </a>
-
-                </div>
-              </div>
-
             </div>
-          </div>
-          <!-- PROJECT 7: Marketplace Lele Berbasis Web -->
-          <div
-            class="col-lg-4 col-md-6 portfolio-item filter-fullstack filter-ecommerce filter-laravel filter-database">
+            <!-- PROJECT 7: Marketplace Lele Berbasis Web -->
+            <div
+              class="col-lg-4 col-md-6 portfolio-item filter-fullstack filter-ecommerce filter-laravel filter-database">
+              <div class="portfolio-wrap modern-card">
+                <!-- IMAGE -->
+                <div class="portfolio-img-wrapper">
+                  <img alt="Marketplace Lele Berbasis Web" class="img-fluid portfolio-image" decoding="async"
+                    loading="lazy" src="assets/img/portfolio/lele/1.png" />
 
-            <div class="portfolio-wrap modern-card">
-
-              <!-- IMAGE -->
-              <div class="portfolio-img-wrapper">
-
-                <img alt="Marketplace Lele Berbasis Web" class="img-fluid portfolio-image" decoding="async"
-                  loading="lazy" src="assets/img/portfolio/lele/1.png" />
-
-
-                <!-- TECHNOLOGY BADGES -->
-                <div class="portfolio-overlay">
-
-                  <div aria-label="Teknologi yang digunakan" class="tech-badges">
-
-                    <span class="badge bg-laravel">
-                      Laravel
-                    </span>
-
-                    <span class="badge bg-php">
-                      PHP
-                    </span>
-
-                    <span class="badge bg-mysql">
-                      MySQL
-                    </span>
-
-                    <span class="badge bg-bootstrap">
-                      Bootstrap
-                    </span>
-
-                    <span class="badge bg-warning text-dark">
-                      JavaScript
-                    </span>
-
-                    <span class="badge bg-api">
-                      REST API
-                    </span>
-
-                    <span class="badge bg-git">
-                      Git / GitHub
-                    </span>
-
-                    <span class="badge bg-dark">
-                      Linux Server
-                    </span>
-
-                    <span class="badge bg-info text-dark">
-                      Deployment
-                    </span>
-
-                    <span class="badge bg-secondary">
-                      Responsive Design
-                    </span>
-
+                  <!-- TECHNOLOGY BADGES -->
+                  <div class="portfolio-overlay">
+                    <div aria-label="Teknologi yang digunakan" class="tech-badges">
+                      <span class="badge bg-laravel">
+                        Laravel
+                      </span>
+                      <span class="badge bg-php">
+                        PHP
+                      </span>
+                      <span class="badge bg-mysql">
+                        MySQL
+                      </span>
+                      <span class="badge bg-bootstrap">
+                        Bootstrap
+                      </span>
+                      <span class="badge bg-warning text-dark">
+                        JavaScript
+                      </span>
+                      <span class="badge bg-api">
+                        REST API
+                      </span>
+                      <span class="badge bg-git">
+                        Git / GitHub
+                      </span>
+                      <span class="badge bg-dark">
+                        Linux Server
+                      </span>
+                      <span class="badge bg-info text-dark">
+                        Deployment
+                      </span>
+                      <span class="badge bg-secondary">
+                        Responsive Design
+                      </span>
+                    </div>
                   </div>
-
                 </div>
+                <!-- PORTFOLIO INFO -->
+                <div class="portfolio-info">
+                  <h4>
+                    Marketplace Lele Berbasis Web
+                  </h4>
 
-              </div>
+                  <p class="tech-stack">
+                    Sistem marketplace berbasis web untuk mendukung proses jual beli ikan
+                    lele secara digital dengan tiga jenis pengguna utama yaitu Admin,
+                    Peternak, dan Konsumen. Peternak dapat mengelola produk dan menerima
+                    pesanan, sedangkan konsumen dapat mencari produk, melakukan pemesanan,
+                    pembayaran, serta memantau proses pengiriman.
+                  </p>
 
+                  <div class="portfolio-links">
+                    <!-- MAIN GALLERY -->
+                    <a aria-label="Lihat galeri Marketplace Lele" class="venobox portfolio-action"
+                      data-gall="marketplace-lele-gallery" href="assets/img/portfolio/lele/1.png"
+                      title="Marketplace Lele Berbasis Web">
+                      <i aria-hidden="true" class="bx bx-plus"></i>
+                    </a>
 
+                    <!-- HIDDEN GALLERY -->
+                    <a aria-hidden="true" class="venobox d-none" data-gall="marketplace-lele-gallery"
+                      href="assets/img/portfolio/lele/2.png" tabindex="-1" title="Marketplace Lele - Dashboard Admin">
+                    </a>
+                    <a aria-hidden="true" class="venobox d-none" data-gall="marketplace-lele-gallery"
+                      href="assets/img/portfolio/lele/3.png" tabindex="-1" title="Marketplace Lele - Produk">
+                    </a>
+                    <a aria-hidden="true" class="venobox d-none" data-gall="marketplace-lele-gallery"
+                      href="assets/img/portfolio/lele/4.png" tabindex="-1" title="Marketplace Lele - Pemesanan">
+                    </a>
+                    <a aria-hidden="true" class="venobox d-none" data-gall="marketplace-lele-gallery"
+                      href="assets/img/portfolio/lele/5.png" tabindex="-1" title="Marketplace Lele - Transaksi">
+                    </a>
 
-              <!-- PORTFOLIO INFO -->
-              <div class="portfolio-info">
+                    <!-- VIDEO DEMO -->
+                    <a aria-label="Lihat video demo Marketplace Lele" class="btn-detail portfolio-action"
+                      href="assets/img/portfolio/lele/Screen%20Recording%202026-09-10%20125538.mp4"
+                      rel="noopener noreferrer" target="_blank" title="Video Demo Marketplace Lele">
+                      <i aria-hidden="true" class="bx bx-play"></i>
+                    </a>
 
-
-                <h4>
-                  Marketplace Lele Berbasis Web
-                </h4>
-
-
-                <p class="tech-stack">
-                  Sistem marketplace berbasis web untuk mendukung proses jual beli ikan
-                  lele secara digital dengan tiga jenis pengguna utama yaitu Admin,
-                  Peternak, dan Konsumen. Peternak dapat mengelola produk dan menerima
-                  pesanan, sedangkan konsumen dapat mencari produk, melakukan pemesanan,
-                  pembayaran, serta memantau proses pengiriman.
-                </p>
-
-
-
-                <div class="portfolio-links">
-
-
-                  <!-- MAIN GALLERY -->
-                  <a aria-label="Lihat galeri Marketplace Lele" class="venobox portfolio-action"
-                    data-gall="marketplace-lele-gallery" href="assets/img/portfolio/lele/1.png"
-                    title="Marketplace Lele Berbasis Web">
-
-                    <i aria-hidden="true" class="bx bx-plus"></i>
-
-                  </a>
-
-
-
-                  <!-- HIDDEN GALLERY -->
-
-                  <a aria-hidden="true" class="venobox d-none" data-gall="marketplace-lele-gallery"
-                    href="assets/img/portfolio/lele/2.png" tabindex="-1" title="Marketplace Lele - Dashboard Admin">
-                  </a>
-
-
-                  <a aria-hidden="true" class="venobox d-none" data-gall="marketplace-lele-gallery"
-                    href="assets/img/portfolio/lele/3.png" tabindex="-1" title="Marketplace Lele - Produk">
-                  </a>
-
-
-                  <a aria-hidden="true" class="venobox d-none" data-gall="marketplace-lele-gallery"
-                    href="assets/img/portfolio/lele/4.png" tabindex="-1" title="Marketplace Lele - Pemesanan">
-                  </a>
-
-
-                  <a aria-hidden="true" class="venobox d-none" data-gall="marketplace-lele-gallery"
-                    href="assets/img/portfolio/lele/5.png" tabindex="-1" title="Marketplace Lele - Transaksi">
-                  </a>
-
-
-
-                  <!-- VIDEO DEMO -->
-                  <a aria-label="Lihat video demo Marketplace Lele" class="btn-detail portfolio-action"
-                    href="assets/img/portfolio/lele/Screen%20Recording%202026-09-10%20125538.mp4"
-                    rel="noopener noreferrer" target="_blank" title="Video Demo Marketplace Lele">
-
-                    <i aria-hidden="true" class="bx bx-play"></i>
-
-                  </a>
-
-
-
-                  <!-- GITHUB -->
-                  <a aria-label="Lihat repositori Marketplace Lele" class="btn-detail portfolio-action"
-                    href="https://github.com/Rahmyvall" rel="noopener noreferrer" target="_blank"
-                    title="Lihat repositori proyek">
-
-                    <i aria-hidden="true" class="bx bx-link"></i>
-
-                  </a>
-
-
+                    <!-- GITHUB -->
+                    <a aria-label="Lihat repositori Marketplace Lele" class="btn-detail portfolio-action"
+                      href="https://github.com/Rahmyvall" rel="noopener noreferrer" target="_blank"
+                      title="Lihat repositori proyek">
+                      <i aria-hidden="true" class="bx bx-link"></i>
+                    </a>
+                  </div>
                 </div>
-
-
               </div>
+            </div>
+            <!-- PROJECT 7: ClientHub – CRM Sederhana untuk Tim Sales -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-uiux filter-design">
+              <div class="portfolio-wrap modern-card">
+                <!-- IMAGE -->
+                <div class="portfolio-img-wrapper">
+                  <img alt="ClientHub – CRM Sederhana untuk Tim Sales" class="img-fluid portfolio-image"
+                    decoding="async" loading="lazy"
+                    src="assets/img/portfolio/ClientHubCRMDesigner/1A · Riset & persona.png" />
 
+                  <!-- DESIGN BADGES -->
+                  <div class="portfolio-overlay">
+                    <div aria-label="Tools dan kompetensi desain" class="tech-badges">
+                      <span class="badge bg-dark">
+                        UI/UX Design
+                      </span>
+                      <span class="badge bg-primary">
+                        Figma
+                      </span>
+                      <span class="badge bg-info text-dark">
+                        User Research
+                      </span>
+                      <span class="badge bg-success">
+                        Wireframing
+                      </span>
+                      <span class="badge bg-warning text-dark">
+                        Prototyping
+                      </span>
+                      <span class="badge bg-secondary">
+                        User Flow
+                      </span>
+                      <span class="badge bg-secondary">
+                        Dashboard Design
+                      </span>
+                      <span class="badge bg-dark">
+                        Responsive Design
+                      </span>
+                      <span class="badge bg-info text-dark">
+                        Usability
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <!-- PORTFOLIO INFO -->
+                <div class="portfolio-info">
+                  <h4>
+                    ClientHub – CRM Sederhana untuk Tim Sales
+                  </h4>
+                  <p class="tech-stack">
+                    Perancangan UI/UX aplikasi Customer Relationship Management
+                    (CRM) untuk membantu tim sales mengelola data pelanggan,
+                    memantau progres penjualan, mengatur jadwal tindak lanjut,
+                    serta melihat ringkasan aktivitas melalui dashboard.
+                    Proyek ini berfokus pada penyusunan user flow, wireframe,
+                    desain antarmuka yang intuitif, dan prototipe interaktif
+                    untuk menciptakan pengalaman pengguna yang efisien.
+                  </p>
+                  <div class="portfolio-links">
+                    <!-- 1 · Strategi & alur UX -->
+                    <a aria-label="Lihat Strategi dan Alur UX ClientHub" class="venobox portfolio-action"
+                      data-gall="clienthub-gallery"
+                      href="assets/img/portfolio/ClientHubCRMDesigner/1A · Riset & persona.png"
+                      title="1 · Strategi & alur UX">
+                      <i aria-hidden="true" class="bx bx-plus"></i>
+                    </a>
+                    <!-- 2 · Design system -->
+                    <a aria-hidden="true" class="venobox d-none" data-gall="clienthub-gallery"
+                      href="assets/img/portfolio/ClientHubCRMDesigner/1B · Arsitektur info & alur pengguna.png"
+                      tabindex="-1" title="2 · Design system">
+                    </a>
 
+                    <!-- 3A · Desktop — Dashboard & Pipeline -->
+                    <a aria-hidden="true" class="venobox d-none" data-gall="clienthub-gallery"
+                      href="assets/img/portfolio/ClientHubCRMDesigner/2 · Design system.png" tabindex="-1"
+                      title="3A · Desktop — Dashboard & Pipeline">
+                    </a>
+
+                    <!-- 3B · Desktop — Kontak & Detail klien -->
+                    <a aria-hidden="true" class="venobox d-none" data-gall="clienthub-gallery"
+                      href="assets/img/portfolio/ClientHubCRMDesigner/Dashboard.png" tabindex="-1"
+                      title="3B · Desktop — Kontak & Detail klien">
+                    </a>
+
+                    <!-- 3C · Desktop — Tugas & Laporan -->
+                    <a aria-hidden="true" class="venobox d-none" data-gall="clienthub-gallery"
+                      href="assets/img/portfolio/ClientHubCRMDesigner/Pipeline (kanban).png" tabindex="-1"
+                      title="3C · Desktop — Tugas & Laporan">
+                    </a>
+
+                    <!-- 4 · Mobile — alur lapangan -->
+                    <a aria-hidden="true" class="venobox d-none" data-gall="clienthub-gallery"
+                      href="assets/img/portfolio/ClientHubCRMDesigner/Kontak.png" tabindex="-1"
+                      title="4 · Mobile — alur lapangan">
+                    </a>
+
+                    <!-- 4 · Mobile — alur lapangan -->
+                    <a aria-hidden="true" class="venobox d-none" data-gall="clienthub-gallery"
+                      href="assets/img/portfolio/ClientHubCRMDesigner/Detail klien.png" tabindex="-1"
+                      title="4 · Mobile — alur lapangan">
+                    </a>
+                    <!-- 4 · Mobile — alur lapangan -->
+                    <a aria-hidden="true" class="venobox d-none" data-gall="clienthub-gallery"
+                      href="assets/img/portfolio/ClientHubCRMDesigner/Tugas & follow-up.png" tabindex="-1"
+                      title="4 · Mobile — alur lapangan">
+                    </a>
+                    <!-- 4 · Mobile — alur lapangan -->
+                    <a aria-hidden="true" class="venobox d-none" data-gall="clienthub-gallery"
+                      href="assets/img/portfolio/ClientHubCRMDesigner/Laporan penjualan.png" tabindex="-1"
+                      title="4 · Mobile — alur lapangan">
+                    </a>
+                    <!-- 4 · Mobile — alur lapangan -->
+                    <a aria-hidden="true" class="venobox d-none" data-gall="clienthub-gallery"
+                      href="assets/img/portfolio/ClientHubCRMDesigner/Mobile · Beranda.png" tabindex="-1"
+                      title="4 · Mobile — alur lapangan">
+                    </a>
+                    <!-- 4 · Mobile — alur lapangan -->
+                    <a aria-hidden="true" class="venobox d-none" data-gall="clienthub-gallery"
+                      href="assets/img/portfolio/ClientHubCRMDesigner/Mobile · Catat aktivitas.png" tabindex="-1"
+                      title="4 · Mobile — alur lapangan">
+                    </a>
+                    <!-- 4 · Mobile — alur lapangan -->
+                    <a aria-hidden="true" class="venobox d-none" data-gall="clienthub-gallery"
+                      href="assets/img/portfolio/ClientHubCRMDesigner/Mobile · Detail klien.png" tabindex="-1"
+                      title="4 · Mobile — alur lapangan">
+                    </a>
+                    <!-- 4 · Mobile — alur lapangan -->
+                    <a aria-hidden="true" class="venobox d-none" data-gall="clienthub-gallery"
+                      href="assets/img/portfolio/ClientHubCRMDesigner/Mobile · Pipeline.png" tabindex="-1"
+                      title="4 · Mobile — alur lapangan">
+                    </a>
+                    <!-- FIGMA / PROJECT LINK -->
+                    <a aria-label="Lihat desain ClientHub di Figma" class="btn-detail portfolio-action"
+                      href="https://www.figma.com/" rel="noopener noreferrer" target="_blank"
+                      title="Lihat Desain ClientHub di Figma">
+                      <i aria-hidden="true" class="bx bx-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
 
-
           </div>
+          <button class="portfolio-arrow portfolio-arrow-right" type="button" aria-label="Geser proyek ke kanan">
+            <i class="bx bx-chevron-right" aria-hidden="true"></i>
+          </button>
         </div>
-        <!-- END PORTFOLIO GRID -->
+        <!-- END MODERN PORTFOLIO CAROUSEL -->
         <!-- GITHUB BUTTON -->
         <div class="row mt-5" data-aos="fade-up">
           <div class="col-12 text-center">
@@ -2933,15 +3002,6 @@
       </div>
     </footer>
   </main>
-  <!-- End Header -->
-  <!-- ======= Hero Section ======= -->
-  <!-- ======= About Section ======= -->
-  <!-- ======= Portfolio Section ======= -->
-  <!-- HARD SKILLS -->
-  <!-- SOFT SKILLS -->
-  <!-- ======= Resume Section ======= -->
-  <!-- ======= Contact Section ======= -->
-  <!-- End #main -->
   <!-- ======= Footer ======= -->
   <a aria-label="Kembali ke bagian atas halaman" class="back-to-top" href="#" title="Kembali ke atas">
     <i class="icofont-simple-up">

@@ -207,29 +207,12 @@ body.dark-mode .project-highlight {
   background: rgba(30, 58, 138, 0.24);
 }
 
-body.dark-mode .portfolio-flters-modern li,
-body.dark-mode .uiux-direct-link {
-  border-color: rgba(148, 163, 184, 0.3);
-  background: rgba(15, 23, 42, 0.72);
-  color: #cbd5e1;
-}
-
-body.dark-mode .portfolio-flters-modern li:hover,
-body.dark-mode .portfolio-flters-modern li.filter-active,
-body.dark-mode .uiux-direct-link:hover {
-  border-color: transparent;
-  background: linear-gradient(135deg, #1d4ed8, #0891b2);
-  color: #f8fafc;
-}
-
-body.dark-mode .portfolio-links a,
 body.dark-mode .social-icon {
   border-color: rgba(148, 163, 184, 0.28);
   background: rgba(30, 41, 59, 0.82);
   color: #e2e8f0;
 }
 
-body.dark-mode .portfolio-links a:hover,
 body.dark-mode .social-icon:hover {
   background: #2563eb;
   color: #ffffff;
@@ -1198,19 +1181,20 @@ body.dark-mode .soft-skills-section .tech-stack span {
 /* ----------------------------------------------------------
    11. PORTFOLIO
 ---------------------------------------------------------- */
-#portfolio,
-.portfolio {
-  padding: 90px 0;
-  background: #f8fafc;
-  color: var(--text);
+.portfolio-flters-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
 }
 
 .portfolio-flters-modern {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
-  margin: 0 0 38px;
+  gap: 9px;
+  margin: 0;
   padding: 0;
   list-style: none;
 }
@@ -1219,15 +1203,16 @@ body.dark-mode .soft-skills-section .tech-stack span {
 .uiux-direct-link {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   padding: 9px 18px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(37, 99, 235, 0.16);
   border-radius: var(--radius-pill);
   background: #ffffff;
-  color: #374151;
-  font-size: 13px;
+  color: #475569;
+  font-size: 13.5px;
   font-weight: 700;
+  line-height: 1.4;
   cursor: pointer;
+  box-shadow: var(--shadow-sm);
   transition:
     transform var(--transition),
     background-color var(--transition),
@@ -1240,155 +1225,381 @@ body.dark-mode .soft-skills-section .tech-stack span {
 .portfolio-flters-modern li.filter-active,
 .uiux-direct-link:hover {
   border-color: transparent;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: #ffffff;
-  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.26);
   transform: translateY(-2px);
 }
 
-.portfolio-container {
+.portfolio-carousel-shell {
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+  min-width: 0;
 }
 
-.portfolio-item {
-  margin-bottom: 24px;
+.portfolio-carousel-track {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 30px;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 16px 32px 28px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-.portfolio-wrap,
-.modern-card {
+.portfolio-carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.portfolio-carousel-track > .portfolio-item {
+  flex: 0 0 calc((100% - 60px) / 3);
+  width: calc((100% - 60px) / 3);
+  max-width: calc((100% - 60px) / 3);
+  min-width: 0;
+  padding: 0;
+  scroll-snap-align: start;
+}
+
+.portfolio-carousel-track .modern-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
   height: 100%;
   overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  background: var(--surface);
-  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(127, 127, 127, 0.16);
+  border-radius: 20px;
+  background: var(--bs-body-bg, #fff);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.07);
   transition:
-    transform var(--transition),
-    box-shadow var(--transition);
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.portfolio-wrap:hover,
-.modern-card:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-8px);
+.portfolio-carousel-track .modern-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.13);
 }
 
-.portfolio-img-wrapper {
+.portfolio-carousel-track .portfolio-img-wrapper {
   position: relative;
   overflow: hidden;
-  background: #e2e8f0;
 }
 
-.portfolio-img-wrapper img {
+.portfolio-carousel-track .portfolio-image {
   display: block;
   width: 100%;
-  height: 235px;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.45s ease;
 }
 
-.portfolio-wrap:hover .portfolio-img-wrapper img,
-.modern-card:hover .portfolio-img-wrapper img {
-  transform: scale(1.06);
+.portfolio-carousel-track .modern-card:hover .portfolio-image {
+  transform: scale(1.045);
 }
 
+/* --- Overlay gambar + badge teknologi --- */
 .portfolio-overlay {
   position: absolute;
   inset: 0;
+  z-index: 2;
   display: flex;
   align-items: flex-end;
   padding: 18px;
   background: linear-gradient(
-    to top,
-    rgba(15, 23, 42, 0.9),
-    rgba(15, 23, 42, 0.08)
+    180deg,
+    rgba(2, 6, 23, 0) 42%,
+    rgba(2, 6, 23, 0.72) 100%
   );
-  opacity: 0;
-  transition: opacity var(--transition);
-}
-
-.portfolio-wrap:hover .portfolio-overlay,
-.modern-card:hover .portfolio-overlay {
-  opacity: 1;
+  transition: background 0.35s ease;
 }
 
 .tech-badges {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
+  gap: 6px;
 }
 
-.tech-badges .badge {
-  padding: 6px 10px;
-  color: #ffffff;
+.portfolio-overlay .badge {
+  padding: 5px 11px;
+  border-radius: 999px;
   font-size: 11px;
-  backdrop-filter: blur(10px);
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: #f8fafc;
+  box-shadow: 0 4px 12px rgba(2, 6, 23, 0.28);
+  backdrop-filter: blur(6px);
 }
 
-.bg-laravel {
-  background: #ff2d20;
-}
-.bg-tailwind {
-  background: #06b6d4;
-}
-.bg-vue {
-  background: #42b883;
-}
-.bg-chart {
-  background: #7c3aed;
-}
-.bg-mysql {
-  background: #2563eb;
-}
-.bg-role {
-  background: #ea580c;
+/* Badge Bootstrap (warning/info) tetap terbaca di atas overlay gelap */
+.portfolio-overlay .badge.text-dark {
+  color: #1e293b;
 }
 
-.portfolio-info {
+/* Badge teknologi brand */
+.badge.bg-laravel {
+  background: linear-gradient(135deg, #f9322c, #c92b25);
+}
+.badge.bg-vue {
+  background: linear-gradient(135deg, #42b883, #2c8a63);
+}
+.badge.bg-mysql {
+  background: linear-gradient(135deg, #00758f, #005e73);
+}
+.badge.bg-tailwind {
+  background: linear-gradient(135deg, #38bdf8, #0284c7);
+}
+.badge.bg-php {
+  background: linear-gradient(135deg, #787cb5, #5a5e93);
+}
+.badge.bg-bootstrap {
+  background: linear-gradient(135deg, #7952b3, #5c3d8f);
+}
+.badge.bg-chart {
+  background: linear-gradient(135deg, #10b981, #047857);
+}
+.badge.bg-api {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+.badge.bg-git {
+  background: linear-gradient(135deg, #f97316, #ea580c);
+}
+.badge.bg-docker {
+  background: linear-gradient(135deg, #2496ed, #1d6fa5);
+}
+.badge.bg-role {
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+}
+
+.portfolio-carousel-track .portfolio-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   padding: 22px;
 }
 
-.portfolio-info h4 {
-  margin-bottom: 8px;
-  color: var(--heading);
-  font-size: 19px;
-  font-weight: 800;
+.portfolio-carousel-track .portfolio-info h4 {
+  font-size: 1.08rem;
+  line-height: 1.45;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.portfolio-info .tech-stack,
-.portfolio-info p {
-  margin-bottom: 16px;
+.portfolio-carousel-track .portfolio-info .tech-stack {
+  flex: 1;
+  margin-bottom: 0;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 13.5px;
   line-height: 1.65;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.portfolio-links {
+.portfolio-carousel-track .portfolio-links {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 9px;
+  margin-top: auto;
+  padding-top: 16px;
 }
 
-.portfolio-links a {
+/* --- Tombol aksi kartu --- */
+.portfolio-links .portfolio-action,
+.btn-detail {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 42px;
   height: 42px;
-  border-radius: 11px;
-  background: #f1f5f9;
-  color: var(--heading);
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  border-radius: 50%;
+  background: linear-gradient(180deg, #ffffff, #f1f5f9);
+  color: #2563eb;
   font-size: 19px;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.09);
   transition:
     transform var(--transition),
     background-color var(--transition),
-    color var(--transition);
+    color var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition);
 }
 
-.portfolio-links a:hover {
-  background: var(--primary);
+.portfolio-links .portfolio-action:hover,
+.btn-detail:hover {
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: #ffffff;
-  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.3);
+  transform: translateY(-3px) scale(1.05);
+}
+
+.portfolio-arrow {
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(127, 127, 127, 0.25);
+  border-radius: 50%;
+  color: var(--bs-body-color, #222);
+  background: var(--bs-body-bg, #fff);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.09);
+  cursor: pointer;
+  z-index: 2;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.portfolio-arrow i {
+  font-size: 1.65rem;
+}
+
+.portfolio-arrow:hover {
+  color: #fff;
+  background: #2563eb;
+  border-color: #2563eb;
+  transform: scale(1.06);
+}
+
+.portfolio-arrow:active {
+  transform: scale(0.95);
+}
+
+.portfolio-arrow:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.4);
+  outline-offset: 2px;
+}
+
+.portfolio-arrow:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@media (max-width: 991.98px) {
+  .portfolio-carousel-shell {
+    gap: 12px;
+  }
+
+  .portfolio-arrow {
+    flex-basis: 40px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .portfolio-carousel-track {
+    gap: 22px;
+    padding: 10px 20px 26px;
+  }
+
+  .portfolio-carousel-track > .portfolio-item {
+    flex-basis: 88%;
+    width: 88%;
+    max-width: 88%;
+  }
+
+  .portfolio-carousel-track .portfolio-info {
+    padding: 18px;
+  }
+
+  .portfolio-overlay {
+    padding: 12px;
+  }
+
+  .portfolio-overlay .badge {
+    padding: 4px 9px;
+    font-size: 10px;
+  }
+}
+
+/* Filter plugin compatibility: hidden items stay hidden */
+.portfolio-carousel-track > .portfolio-item[style*="display: none"] {
+  display: none !important;
+}
+
+/* --- Dark mode portfolio --- */
+body.dark-mode .portfolio-carousel-track .modern-card {
+  border-color: rgba(148, 163, 184, 0.22);
+  background: var(--surface);
+}
+
+body.dark-mode .portfolio-carousel-track .modern-card:hover {
+  border-color: rgba(99, 102, 241, 0.45);
+  box-shadow: 0 18px 44px rgba(2, 6, 23, 0.5);
+}
+
+body.dark-mode .portfolio-carousel-track .portfolio-info h4 {
+  color: var(--heading);
+}
+
+body.dark-mode .portfolio-carousel-track .portfolio-info .tech-stack {
+  color: var(--muted);
+}
+
+body.dark-mode .portfolio-arrow {
+  border-color: rgba(148, 163, 184, 0.3);
+  background: var(--surface);
+  color: #e2e8f0;
+  box-shadow: 0 8px 20px rgba(2, 6, 23, 0.45);
+}
+
+body.dark-mode .portfolio-arrow:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+}
+
+body.dark-mode .portfolio-links .portfolio-action,
+body.dark-mode .btn-detail {
+  border-color: rgba(148, 163, 184, 0.25);
+  background: linear-gradient(180deg, #1e293b, #172033);
+  color: #a5b4fc;
+  box-shadow: 0 6px 16px rgba(2, 6, 23, 0.4);
+}
+
+body.dark-mode .portfolio-links .portfolio-action:hover,
+body.dark-mode .btn-detail:hover {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-color: transparent;
+  color: #ffffff;
+}
+
+body.dark-mode .portfolio-flters-modern li,
+body.dark-mode .uiux-direct-link {
+  border-color: rgba(148, 163, 184, 0.22);
+  background: #1e293b;
+  color: #cbd5e1;
+  box-shadow: 0 6px 16px rgba(2, 6, 23, 0.3);
+}
+
+body.dark-mode .portfolio-flters-modern li:hover,
+body.dark-mode .portfolio-flters-modern li.filter-active,
+body.dark-mode .uiux-direct-link:hover {
+  border-color: transparent;
+  background: linear-gradient(135deg, #2563eb, #0891b2);
+  color: #f8fafc;
+}
+
+body.dark-mode .portfolio-overlay .badge.text-dark {
+  color: #0f172a;
 }
 
 /* ----------------------------------------------------------
@@ -2432,10 +2643,6 @@ button.show-all:hover {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .portfolio-img-wrapper img {
-    height: 220px;
-  }
-
   .footer-content {
     flex-direction: column;
     text-align: center;
@@ -2493,10 +2700,6 @@ button.show-all:hover {
 
   .resume-period {
     white-space: normal;
-  }
-
-  .portfolio-img-wrapper img {
-    height: 205px;
   }
 
   .portfolio-info {
@@ -2564,10 +2767,6 @@ button.show-all:hover {
   .uiux-direct-link {
     padding: 8px 13px;
     font-size: 12px;
-  }
-
-  .portfolio-img-wrapper img {
-    height: 190px;
   }
 
   .cert-card {
